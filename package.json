@@ -1,0 +1,53 @@
+{
+  "name": "design-lab-app",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --configuration production",
+    "build:dev": "ng build --configuration development",
+    "build:staging": "ng build --configuration staging",
+    "build:prod": "ng build --configuration production",
+    "serve:dev": "ng serve --configuration development",
+    "serve:prod": "ng serve --configuration production",
+    "serve:staging": "ng serve --configuration staging",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "deploy:s3": "npm run build:prod && aws s3 sync dist/synoptiq-globle s3://your-bucket-name --delete",
+    "deploy:vercel": "npm run build:prod && vercel --prod",
+    "deploy:gh-pages": "npm run build:prod && npx angular-cli-ghpages --dir=dist/synoptiq-globle"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^16.1.0",
+    "@angular/cdk": "^16.2.14",
+    "@angular/common": "^16.1.0",
+    "@angular/compiler": "^16.1.0",
+    "@angular/core": "^16.1.0",
+    "@angular/forms": "^16.1.0",
+    "@angular/material": "^16.2.14",
+    "@angular/platform-browser": "^16.1.0",
+    "@angular/platform-browser-dynamic": "^16.1.0",
+    "@angular/router": "^16.1.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "webpack": "^5.102.1",
+    "zone.js": "~0.13.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^16.2.12",
+    "@angular/cli": "^16.2.12",
+    "@angular/compiler-cli": "^16.2.12",
+    "@types/jasmine": "~4.3.0",
+    "autoprefixer": "^10.4.21",
+    "jasmine-core": "~4.6.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.18",
+    "typescript": "~5.1.3"
+  }
+}
