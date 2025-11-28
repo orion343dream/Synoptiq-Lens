@@ -711,6 +711,215 @@
                 max-width: 300px;
             }
         }
+
+        /* Intigration Section */
+
+         .integrations-wrapper {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .integrations-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* Icon Grid Background */
+        .icon-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 16px;
+            padding: 40px;
+            opacity: 0.4;
+        }
+        
+        .icon-item {
+            background: rgba(139, 92, 246, 0.15);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 12px;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .icon-item:hover {
+            background: rgba(139, 92, 246, 0.25);
+            border-color: rgba(139, 92, 246, 0.5);
+            transform: scale(1.05);
+        }
+        
+        /* Center Logo Glow Effect */
+        .center-logo-container {
+            position: absolute;
+            top: 50%;
+            right: 20%;
+            transform: translate(0, -50%);
+            width: 320px;
+            height: 320px;
+            z-index: 5;
+        }
+        
+        .glow-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+        
+        .glow-ring-1 {
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, transparent 70%);
+            animation-delay: 0s;
+        }
+        
+        .glow-ring-2 {
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.5) 0%, transparent 70%);
+            animation-delay: 0.5s;
+        }
+        
+        .glow-ring-3 {
+            width: 240px;
+            height: 240px;
+            background: radial-gradient(circle, rgba(192, 132, 252, 0.6) 0%, transparent 70%);
+            animation-delay: 1s;
+        }
+        
+        .logo-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle at 30% 30%, #7c3aed 0%, #5b21b6 50%, #1e1b4b 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 
+                0 0 60px rgba(139, 92, 246, 0.6),
+                0 0 120px rgba(139, 92, 246, 0.4),
+                inset 0 0 40px rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(139, 92, 246, 0.5);
+        }
+        
+        .logo-x {
+            font-size: 96px;
+            font-weight: 900;
+            color: white;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            font-family: 'Arial Black', sans-serif;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% {
+                opacity: 0.6;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1.05);
+            }
+        }
+        
+        /* Decorative Lines */
+        .vertical-line {
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent 0%, rgba(139, 92, 246, 0.3) 50%, transparent 100%);
+        }
+        
+        .line-1 { left: 10%; }
+        .line-2 { left: 52%; }
+        .line-3 { right: 10%; }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .text-content {
+            animation: fadeInLeft 0.8s ease-out;
+        }
+        
+        .integrations-badge {
+            display: inline-block;
+            border: 1px solid rgba(139, 92, 246, 0.5);
+            color: #c4b5fd;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            background: rgba(139, 92, 246, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .integrations-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+        
+        .integrations-description {
+            font-size: 1.125rem;
+            color: #c4b5fd;
+            line-height: 1.6;
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+        
+        .view-integrations-btn {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .view-integrations-btn:hover {
+            background: rgba(139, 92, 246, 0.2);
+            border-color: rgba(139, 92, 246, 0.6);
+            transform: translateX(5px);
+        }
+        
+        /* Icon symbols (simplified) */
+        .icon-symbol {
+            width: 32px;
+            height: 32px;
+            background: rgba(139, 92, 246, 0.3);
+            border-radius: 4px;
+        }
+
     </style>
 </head>
 <body class="bg-white">
@@ -1542,6 +1751,157 @@
             </div>
         </div>
     </section>
+
+    <!-- Mixpanel Integrations Section -->
+    <section class="integrations-wrapper" style="min-height: 600px; margin: 32px; border-radius: 32px;">
+        <!-- Decorative vertical lines -->
+        <div class="vertical-line line-1"></div>
+        <div class="vertical-line line-2"></div>
+        <div class="vertical-line line-3"></div>
+        
+        <!-- Icon Grid Background -->
+        <div class="icon-grid">
+            <!-- Row 1 -->
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            
+            <!-- Row 2 -->
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            
+            <!-- Row 3 -->
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            
+            <!-- Row 4 -->
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            
+            <!-- Row 5 -->
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            
+            <!-- Row 6 -->
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+            <div class="icon-item"><div class="icon-symbol"></div></div>
+        </div>
+        
+        <!-- Center Glowing Logo -->
+        <div class="center-logo-container">
+            <div class="glow-ring glow-ring-1"></div>
+            <div class="glow-ring glow-ring-2"></div>
+            <div class="glow-ring glow-ring-3"></div>
+            <div class="logo-circle">
+                <div class="logo-x">✕</div>
+            </div>
+        </div>
+        
+        <!-- Text Content -->
+        <div class="integrations-content" style="padding: 80px 60px; max-width: 1400px; margin: 0 auto;">
+            <div class="text-content">
+                <div class="integrations-badge">Integrations</div>
+                <h2 class="integrations-title">
+                    Get started today,<br>quick and easy
+                </h2>
+                <p class="integrations-description">
+                    Mixpanel integrates with 100+ marketing tools, so you can rest assured we work with your tech stack.
+                </p>
+                <button class="view-integrations-btn">
+                    View Integrations
+                    <span>→</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add random animation delays to icon items for staggered effect
+        const iconItems = document.querySelectorAll('.icon-item');
+        iconItems.forEach((item, index) => {
+            const delay = Math.random() * 2;
+            item.style.animationDelay = `${delay}s`;
+            
+            // Random hover effect
+            item.addEventListener('mouseenter', function() {
+                this.style.background = 'rgba(139, 92, 246, 0.35)';
+                this.style.borderColor = 'rgba(139, 92, 246, 0.7)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.background = 'rgba(139, 92, 246, 0.15)';
+                this.style.borderColor = 'rgba(139, 92, 246, 0.3)';
+            });
+        });
+        
+        // Add click effect to button
+        const btn = document.querySelector('.view-integrations-btn');
+        btn.addEventListener('click', function() {
+            this.style.transform = 'translateX(5px) scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = 'translateX(5px) scale(1)';
+            }, 150);
+        });
+    </script>
 
     <!-- Mixpanel Why Teams Choose Section -->
     <section class="py-20 px-6">
