@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mixpanel Hero Section</title>
+
+<div class="apldg-body-overlay"></div>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -20,21 +17,31 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
 
-        .insights-card-gradient {
+         body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .card-gradient {
             background: linear-gradient(135deg, #E8D4FF 0%, #FFE8E8 50%, #FFF5E8 100%);
         }
-
-        .insights-card-shadow {
+        
+        .card-shadow {
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         }
 
-        .metric-tree-dotted-bg {
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .dotted-bg {
             background-image: radial-gradient(circle, #e0d4f7 1px, transparent 1px);
             background-size: 20px 20px;
         }
-
-        /* Metric Tree Fade in animation */
-        @keyframes metric-tree-fadeInUp {
+        
+        /* Fade in animation */
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(20px);
@@ -44,9 +51,9 @@
                 transform: translateY(0);
             }
         }
-
-        /* Metric Tree Scale in animation */
-        @keyframes metric-tree-scaleIn {
+        
+        /* Scale in animation */
+        @keyframes scaleIn {
             from {
                 opacity: 0;
                 transform: scale(0.8);
@@ -56,9 +63,9 @@
                 transform: scale(1);
             }
         }
-
-        /* Metric Tree Draw line animation */
-        @keyframes metric-tree-drawLine {
+        
+        /* Draw line animation */
+        @keyframes drawLine {
             from {
                 stroke-dashoffset: 200;
             }
@@ -66,93 +73,103 @@
                 stroke-dashoffset: 0;
             }
         }
-
-        .metric-tree-card {
-            animation: metric-tree-fadeInUp 0.6s ease-out forwards;
+        
+        .metric-card {
+            animation: fadeInUp 0.6s ease-out forwards;
             opacity: 0;
         }
-
-        .metric-tree-card:nth-child(1) { animation-delay: 0.2s; }
-        .metric-tree-card:nth-child(2) { animation-delay: 0.4s; }
-        .metric-tree-card:nth-child(3) { animation-delay: 0.6s; }
-        .metric-tree-card:nth-child(4) { animation-delay: 0.8s; }
-        .metric-tree-card:nth-child(5) { animation-delay: 1s; }
-        .metric-tree-card:nth-child(6) { animation-delay: 1.2s; }
-
-        .metric-tree-connecting-line {
+        
+        .metric-card:nth-child(1) { animation-delay: 0.2s; }
+        .metric-card:nth-child(2) { animation-delay: 0.4s; }
+        .metric-card:nth-child(3) { animation-delay: 0.6s; }
+        .metric-card:nth-child(4) { animation-delay: 0.8s; }
+        .metric-card:nth-child(5) { animation-delay: 1s; }
+        .metric-card:nth-child(6) { animation-delay: 1.2s; }
+        
+        .connecting-line {
             stroke-dasharray: 200;
             stroke-dashoffset: 200;
-            animation: metric-tree-drawLine 0.8s ease-out forwards;
+            animation: drawLine 0.8s ease-out forwards;
         }
-
-        .metric-tree-line-1 { animation-delay: 0.3s; }
-        .metric-tree-line-2 { animation-delay: 0.5s; }
-        .metric-tree-line-3 { animation-delay: 0.7s; }
-        .metric-tree-line-4 { animation-delay: 0.9s; }
-        .metric-tree-line-5 { animation-delay: 1.1s; }
-
-        .metric-tree-badge {
-            animation: metric-tree-scaleIn 0.4s ease-out forwards;
+        
+        .line-1 { animation-delay: 0.3s; }
+        .line-2 { animation-delay: 0.5s; }
+        .line-3 { animation-delay: 0.7s; }
+        .line-4 { animation-delay: 0.9s; }
+        .line-5 { animation-delay: 1.1s; }
+        
+        .badge {
+            animation: scaleIn 0.4s ease-out forwards;
             opacity: 0;
         }
+        
+        .badge-1 { animation-delay: 0.5s; }
+        .badge-2 { animation-delay: 0.9s; }
+        .badge-3 { animation-delay: 1.1s; }
+        .badge-4 { animation-delay: 1.3s; }
 
-        .metric-tree-badge-1 { animation-delay: 0.5s; }
-        .metric-tree-badge-2 { animation-delay: 0.9s; }
-        .metric-tree-badge-3 { animation-delay: 1.1s; }
-        .metric-tree-badge-4 { animation-delay: 1.3s; }
-
-        .team-carousel-container {
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .card-gradient {
+            background: linear-gradient(135deg, #E8D4FF 0%, #FFE8E8 50%, #FFF5E8 100%);
+        }
+        
+        .carousel-container {
             position: relative;
             width: 100%;
             height: 100%;
             overflow: hidden;
         }
-
-        .team-carousel-slide {
+        
+        .carousel-slide {
             position: absolute;
             width: 100%;
             height: 100%;
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
         }
-
-        .team-carousel-slide.active {
+        
+        .carousel-slide.active {
             opacity: 1;
             z-index: 1;
         }
-
-        .team-progress-bar {
+        
+        .progress-bar {
             position: relative;
             width: 100%;
             height: 2px;
             background: #e5e7eb;
             overflow: hidden;
         }
-
-        .team-progress-fill {
+        
+        .progress-fill {
             position: absolute;
             height: 100%;
             background: #6366f1;
             width: 0%;
-            animation: team-progress 1s linear;
+            animation: progress 1s linear;
         }
-
-        @keyframes team-progress {
+        
+        @keyframes progress {
             from { width: 0%; }
             to { width: 100%; }
         }
 
-        .team-card-gradient {
-            background: linear-gradient(135deg, #E8D4FF 0%, #FFE8E8 50%, #FFF5E8 100%);
+        body {
+            font-family: 'Inter', sans-serif;
         }
-
-        .enterprise-gradient-bg {
+        
+        .gradient-bg {
             background: linear-gradient(180deg, #7C3AED 0%, #5B21B6 50%, #1E1B4B 100%);
             position: relative;
             overflow: hidden;
         }
-
-        .enterprise-glow-effect {
+        
+        .glow-effect {
             position: absolute;
             width: 100%;
             height: 200px;
@@ -160,15 +177,15 @@
             bottom: 40%;
             left: 0;
             filter: blur(60px);
-            animation: enterprise-pulse 3s ease-in-out infinite;
+            animation: pulse 3s ease-in-out infinite;
         }
-
-        @keyframes enterprise-pulse {
+        
+        @keyframes pulse {
             0%, 100% { opacity: 0.5; transform: scale(1); }
             50% { opacity: 0.8; transform: scale(1.1); }
         }
-
-        @keyframes enterprise-fadeInUp {
+        
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
@@ -178,8 +195,8 @@
                 transform: translateY(0);
             }
         }
-
-        @keyframes enterprise-scaleIn {
+        
+        @keyframes scaleIn {
             from {
                 opacity: 0;
                 transform: scale(0.9);
@@ -189,77 +206,81 @@
                 transform: scale(1);
             }
         }
-
-        @keyframes enterprise-countUp {
+        
+        @keyframes countUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
-        .enterprise-feature-card {
+        
+        .feature-card {
             backdrop-filter: blur(10px);
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
-            animation: enterprise-fadeInUp 0.6s ease-out forwards;
+            animation: fadeInUp 0.6s ease-out forwards;
             opacity: 0;
         }
-
-        .enterprise-feature-card:nth-child(1) { animation-delay: 0.1s; }
-        .enterprise-feature-card:nth-child(2) { animation-delay: 0.2s; }
-        .enterprise-feature-card:nth-child(3) { animation-delay: 0.3s; }
-        .enterprise-feature-card:nth-child(4) { animation-delay: 0.4s; }
-
-        .enterprise-feature-card:hover {
+        
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+        
+        .feature-card:hover {
             transform: translateY(-5px);
             background: rgba(255, 255, 255, 0.15);
             border-color: rgba(255, 255, 255, 0.3);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
-
-        .enterprise-testimonial-container {
-            animation: enterprise-scaleIn 0.8s ease-out 0.5s forwards;
+        
+        .testimonial-container {
+            animation: scaleIn 0.8s ease-out 0.5s forwards;
             opacity: 0;
         }
-
-        .enterprise-stat-number {
-            animation: enterprise-countUp 0.8s ease-out forwards;
+        
+        .stat-number {
+            animation: countUp 0.8s ease-out forwards;
             opacity: 0;
         }
-
-        .enterprise-stat-number:nth-child(1) { animation-delay: 1s; }
-        .enterprise-stat-number:nth-child(2) { animation-delay: 1.2s; }
-        .enterprise-stat-number:nth-child(3) { animation-delay: 1.4s; }
-
-        .enterprise-nav-button {
+        
+        .stat-number:nth-child(1) { animation-delay: 1s; }
+        .stat-number:nth-child(2) { animation-delay: 1.2s; }
+        .stat-number:nth-child(3) { animation-delay: 1.4s; }
+        
+        .nav-button {
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
             background: rgba(255, 255, 255, 0.1);
         }
-
-        .enterprise-nav-button:hover {
+        
+        .nav-button:hover {
             background: rgba(255, 255, 255, 0.2);
             transform: scale(1.1);
         }
-
-        .enterprise-checkmark {
-            animation: enterprise-scaleIn 0.5s ease-out forwards;
+        
+        .checkmark {
+            animation: scaleIn 0.5s ease-out forwards;
         }
-
-        .enterprise-cta-button {
+        
+        .cta-button {
             transition: all 0.3s ease;
         }
-
-        .enterprise-cta-button:hover {
+        
+        .cta-button:hover {
             transform: scale(1.05);
             box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
         }
 
-        @keyframes support-float {
+                body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
         }
-
-        @keyframes support-fadeInUp {
+        
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(40px);
@@ -269,19 +290,19 @@
                 transform: translateY(0);
             }
         }
-
+        
         .support-card {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            animation: support-fadeInUp 0.6s ease-out forwards;
+            animation: fadeInUp 0.6s ease-out forwards;
             opacity: 0;
             position: relative;
             overflow: hidden;
         }
-
+        
         .support-card:nth-child(1) { animation-delay: 0.1s; }
         .support-card:nth-child(2) { animation-delay: 0.2s; }
         .support-card:nth-child(3) { animation-delay: 0.3s; }
-
+        
         .support-card::before {
             content: '';
             position: absolute;
@@ -292,84 +313,84 @@
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             transition: left 0.5s;
         }
-
+        
         .support-card:hover::before {
             left: 100%;
         }
-
+        
         .support-card:hover {
             transform: translateY(-15px) scale(1.02);
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
         }
-
-        .support-icon-container {
+        
+        .icon-container {
             transition: transform 0.5s ease;
         }
-
-        .support-card:hover .support-icon-container {
-            animation: support-float 2s ease-in-out infinite;
+        
+        .support-card:hover .icon-container {
+            animation: float 2s ease-in-out infinite;
         }
-
-        .support-cta-link {
+        
+        .cta-link {
             transition: all 0.3s ease;
             position: relative;
             display: inline-block;
         }
-
-        .support-cta-link::after {
+        
+        .cta-link::after {
             content: '→';
             margin-left: 8px;
             transition: margin-left 0.3s ease;
         }
-
-        .support-cta-link:hover::after {
+        
+        .cta-link:hover::after {
             margin-left: 12px;
         }
-
+        
         /* 3D Icon Styles */
-        .support-handshake-icon {
+        .handshake-icon {
             width: 120px;
             height: 120px;
             position: relative;
             margin: 0 auto;
         }
-
-        .support-toggle-icon {
+        
+        .toggle-icon {
             width: 120px;
             height: 120px;
             position: relative;
             margin: 0 auto;
         }
-
-        .support-community-icon {
+        
+        .community-icon {
             width: 120px;
             height: 120px;
             position: relative;
             margin: 0 auto;
         }
-
+        
         /* Handshake styling */
-        .support-hand {
+        .hand {
             width: 40px;
             height: 50px;
             background: linear-gradient(135deg, #9333ea 0%, #7c3aed 100%);
             border-radius: 10px 10px 5px 5px;
             position: absolute;
         }
-
-        .support-hand-left {
+        
+        .hand-left {
             left: 10px;
             top: 35px;
             transform: rotate(-15deg);
         }
-
-        .support-hand-right {
+        
+        .hand-right {
             right: 10px;
             top: 35px;
             transform: rotate(15deg);
         }
-
-        .support-handshake-middle {
+        
+        .handshake-middle {
             width: 50px;
             height: 40px;
             background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
@@ -379,9 +400,9 @@
             transform: translate(-50%, -50%);
             border-radius: 15px;
         }
-
+        
         /* Toggle styling */
-        .support-toggle-bg {
+        .toggle-bg {
             width: 100px;
             height: 50px;
             background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
@@ -392,8 +413,8 @@
             transform: translate(-50%, -50%);
             box-shadow: 0 10px 30px rgba(14, 165, 233, 0.4);
         }
-
-        .support-toggle-circle {
+        
+        .toggle-circle {
             width: 40px;
             height: 40px;
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
@@ -404,13 +425,13 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: left 0.3s ease;
         }
-
-        .support-card:hover .support-toggle-circle {
+        
+        .support-card:hover .toggle-circle {
             left: 55px;
         }
-
+        
         /* Community styling */
-        .support-community-platform {
+        .community-platform {
             width: 80px;
             height: 60px;
             background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
@@ -421,8 +442,8 @@
             transform: translateX(-50%);
             box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
         }
-
-        .support-community-person {
+        
+        .community-person {
             width: 35px;
             height: 35px;
             background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
@@ -432,8 +453,8 @@
             left: 50%;
             transform: translateX(-50%);
         }
-
-        .support-community-dots {
+        
+        .community-dots {
             width: 6px;
             height: 6px;
             background: #fca5a5;
@@ -441,34 +462,29 @@
             position: absolute;
             top: 25px;
         }
+        
+        .dot-1 { right: 15px; }
+        .dot-2 { right: 25px; }
+        .dot-3 { right: 35px; }
 
-        .support-dot-1 { right: 15px; }
-        .support-dot-2 { right: 25px; }
-        .support-dot-3 { right: 35px; }
-
-        .footer-gradient-wrapper {
-            background: linear-gradient(180deg,
-                #ffffff 0%,
-                #fef3f7 15%,
-                #f5e6ff 35%,
-                #e9d5ff 50%,
-                #c4b5fd 70%,
-                #8b5cf6 85%,
+         body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-section {
+            background: linear-gradient(180deg, 
+                #ffffff 0%, 
+                #fef3f7 15%, 
+                #f5e6ff 35%, 
+                #e9d5ff 50%, 
+                #c4b5fd 70%, 
+                #8b5cf6 85%, 
                 #6d28d9 100%
             );
-            width: 100%;
-            min-height: 100vh;
-            padding: 80px 24px 0;
             position: relative;
         }
-
-        .footer-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        @keyframes footer-fadeInUp {
+        
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
@@ -478,247 +494,131 @@
                 transform: translateY(0);
             }
         }
-
-        .footer-cta-content {
-            animation: footer-fadeInUp 0.8s ease-out;
-            text-align: center;
-            margin-bottom: 120px;
+        
+        .cta-content {
+            animation: fadeInUp 0.8s ease-out;
         }
-
-        .footer-cta-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 32px;
-            line-height: 1.2;
-        }
-
-        .footer-cta-buttons {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .footer-btn-primary {
-            background: #111827;
-            color: white;
-            padding: 16px 32px;
-            border-radius: 9999px;
-            font-weight: 500;
-            font-size: 1.125rem;
-            border: none;
-            cursor: pointer;
+        
+        .cta-button {
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
-
-        .footer-btn-primary:hover {
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .cta-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .cta-button:hover {
             transform: scale(1.05);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
-
-        .footer-btn-secondary {
-            background: transparent;
-            color: #111827;
-            padding: 16px 32px;
-            border-radius: 9999px;
-            font-weight: 500;
-            font-size: 1.125rem;
-            border: none;
-            cursor: pointer;
+        
+        .footer-link {
             transition: all 0.3s ease;
-        }
-
-        .footer-btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 48px;
-            margin-bottom: 64px;
-        }
-
-        .footer-column {
-            animation: footer-fadeInUp 0.6s ease-out;
-            animation-fill-mode: both;
-        }
-
-        .footer-column:nth-child(1) { animation-delay: 0.1s; }
-        .footer-column:nth-child(2) { animation-delay: 0.2s; }
-        .footer-column:nth-child(3) { animation-delay: 0.3s; }
-        .footer-column:nth-child(4) { animation-delay: 0.4s; }
-        .footer-column:nth-child(5) { animation-delay: 0.5s; }
-
-        .footer-column-title {
-            color: #ddd6fe;
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-            margin-top: 32px;
-        }
-
-        .footer-column-title:first-child {
-            margin-top: 0;
-        }
-
-        .footer-links-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .footer-links-list li {
-            margin-bottom: 12px;
-        }
-
-        .footer-link-item {
-            color: white;
-            font-size: 0.875rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
             position: relative;
+            display: inline-block;
         }
-
-        .footer-link-item:hover {
+        
+        .footer-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: currentColor;
+            transition: width 0.3s ease;
+        }
+        
+        .footer-link:hover::after {
+            width: 100%;
+        }
+        
+        .footer-link:hover {
             transform: translateX(3px);
             color: #e0e7ff;
         }
-
-        .footer-pricing-btn {
+        
+        .footer-section {
+            animation: fadeInUp 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+        
+        .footer-section:nth-child(1) { animation-delay: 0.1s; }
+        .footer-section:nth-child(2) { animation-delay: 0.2s; }
+        .footer-section:nth-child(3) { animation-delay: 0.3s; }
+        .footer-section:nth-child(4) { animation-delay: 0.4s; }
+        
+        .footer-bottom {
+            background: linear-gradient(180deg, rgba(109, 40, 217, 0) 0%, rgba(67, 20, 140, 0.5) 100%);
+        }
+        
+        .pricing-button {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
-            font-size: 0.875rem;
-            padding: 8px 16px;
-            border-radius: 9999px;
-            display: inline-block;
-            margin-top: 8px;
             transition: all 0.3s ease;
-            text-decoration: none;
         }
-
-        .footer-pricing-btn:hover {
+        
+        .pricing-button:hover {
             background: rgba(255, 255, 255, 0.2);
             border-color: rgba(255, 255, 255, 0.4);
             transform: translateX(3px);
         }
 
-        .footer-bottom-section {
-            padding-top: 48px;
-            padding-bottom: 32px;
-            border-top: 1px solid rgba(196, 181, 253, 0.3);
-        }
-
-        .footer-bottom-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 24px;
-        }
-
-        .footer-logo-section {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .footer-logo-text {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .footer-copyright {
-            color: #ddd6fe;
-            font-size: 0.875rem;
-        }
-
-        .footer-legal-links {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
-        .footer-legal-link {
-            color: white;
-            font-size: 0.875rem;
-            text-decoration: underline;
-            transition: color 0.3s ease;
-        }
-
-        .footer-legal-link:hover {
-            color: #ddd6fe;
-        }
-
-        .footer-separator {
-            color: #c4b5fd;
-        }
-
-        @media (max-width: 1024px) {
-            .footer-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .footer-gradient-wrapper {
-                padding: 60px 16px 0;
-            }
-
-            .footer-cta-title {
-                font-size: 2.5rem;
-            }
-
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 32px;
-            }
-
-            .footer-bottom-content {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .footer-cta-title {
-                font-size: 2rem;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-cta-buttons {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .footer-btn-primary,
-            .footer-btn-secondary {
-                width: 100%;
-                max-width: 300px;
-            }
-        }
     </style>
-</head>
-<body class="bg-white">
-    <!-- Navigation -->
+
+<!-- Loading Animation -->
+<div class="fixed inset-0 bg-background z-50 flex items-center justify-center" id="loadingScreen">
+	<div class="relative">
+		<!-- Outer rotating ring -->
+		<div class="w-32 h-32 border-4 border-oxford-blue/20 border-t-crusta border-r-ming rounded-full animate-spin"></div>
+		
+		<!-- Inner pulsing circle -->
+		<div class="absolute inset-0 flex items-center justify-center">
+			<div class="w-20 h-20 bg-gradient-to-br from-crusta to-ming rounded-full animate-pulse opacity-20"></div>
+		</div>
+		
+		<!-- Center logo -->
+		<div class="absolute inset-0 flex items-center justify-center">
+			<div class="w-12 h-12 bg-gradient-to-br from-crusta to-ming rounded-lg flex items-center justify-center">
+				<img src="assets/img/logo.png" alt="Synoptiq Globle" class="w-8 h-8 object-contain" loading="eager" decoding="async">
+			</div>
+		</div>
+		
+		<!-- Loading text -->
+		<div class="absolute -bottom-16 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
+			<p class="text-green-vogue font-semibold text-lg">Loading<span class="animate-pulse">...</span></p>
+		</div>
+	</div>
+</div>
+<!-- Loading Animation End -->
+
+<!-- ScrollTop Button -->
+<a href="#" class="fixed bottom-[72px] portrait:bottom-[72px] landscape:bottom-8 right-8 z-50 flex items-center justify-center w-12 h-12 bg-gradient-to-r from-red-600 to-orange-600 text-white rounded-full shadow-lg hover:shadow-[0_0_20px_rgba(234,88,12,0.6)] hover:scale-110 transition-all duration-300 group">
+  	<mat-icon class="text-xl group-hover:-translate-y-1 transition-transform">keyboard_arrow_up</mat-icon>
+</a>
+
+<!--  < Navigation -->
     <nav class="bg-white px-6 py-4">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <div class="flex items-center space-x-8">
-                <div class="text-2xl font-bold text-gray-900">mixpanel</div>
+                <div class="text-2xl font-bold text-gray-900">Lens</div>
                 <div class="hidden md:flex space-x-6">
                     <a href="#" class="text-gray-700 hover:text-gray-900">Platform</a>
                     <a href="#" class="text-gray-700 hover:text-gray-900">Solutions</a>
@@ -745,7 +645,7 @@
                     Analytics that drive decisions
                 </h1>
                 <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                    Mixpanel helps teams turn user behavior insights into<br>
+                    Lens helps teams turn user behavior insights into<br>
                     clear next steps, without delays or SQL bottlenecks.
                 </p>
                 <div class="flex items-center justify-center space-x-4">
@@ -965,8 +865,13 @@
         </div>
     </section>
 
-    <!-- Mixpanel Insights Section -->
-    <section class="insights-section py-20 px-6">
+
+
+
+
+
+<!-- ===================== SECTION 2 - Lens STYLE ===================== -->
+ <section class="py-20 px-6">
         <div class="max-w-7xl mx-auto">
             <!-- Header -->
             <div class="max-w-xl mb-16">
@@ -974,7 +879,7 @@
                     Turn insights into<br>action — at every stage
                 </h2>
                 <p class="text-lg text-gray-600 mb-8">
-                    Mixpanel helps improve product and web experiences by understanding user behavior, spotting patterns, and making informed decisions.
+                    Lens helps improve product and web experiences by understanding user behavior, spotting patterns, and making informed decisions.
                 </p>
                 <button class="bg-black text-white px-8 py-3 rounded-full hover:bg-gray-800 font-medium">
                     Book a Demo →
@@ -999,7 +904,7 @@
                             Acquire New Users →
                         </a>
                     </div>
-                    <div class="bg-white rounded-2xl insights-card-shadow p-6 insights-card-gradient">
+                    <div class="bg-white rounded-2xl card-shadow p-6 card-gradient">
                         <div class="bg-white rounded-lg p-4">
                             <div class="flex items-center justify-between mb-4">
                                 <div>
@@ -1068,7 +973,7 @@
                             Engage Your Users →
                         </a>
                     </div>
-                    <div class="bg-white rounded-2xl insights-card-shadow p-6 insights-card-gradient">
+                    <div class="bg-white rounded-2xl card-shadow p-6 card-gradient">
                         <div class="bg-white rounded-lg p-4">
                             <div class="flex items-center justify-between mb-4">
                                 <div>
@@ -1172,7 +1077,7 @@
                             Grow Your Usership →
                         </a>
                     </div>
-                    <div class="bg-white rounded-2xl insights-card-shadow p-6 insights-card-gradient">
+                    <div class="bg-white rounded-2xl card-shadow p-6 card-gradient">
                         <div class="bg-white rounded-lg p-4">
                             <div class="mb-4">
                                 <div class="text-sm font-medium text-gray-600 mb-1">📈 Power Users Submitting Prompts</div>
@@ -1185,25 +1090,25 @@
                                     <line x1="0" y1="100" x2="400" y2="100" stroke="#f0f0f0" stroke-width="1"/>
                                     <line x1="0" y1="150" x2="400" y2="150" stroke="#f0f0f0" stroke-width="1"/>
                                     <line x1="0" y1="200" x2="400" y2="200" stroke="#f0f0f0" stroke-width="1"/>
-
+                                    
                                     <!-- Y-axis labels -->
                                     <text x="10" y="45" font-size="10" fill="#999">15k</text>
                                     <text x="10" y="95" font-size="10" fill="#999">12.5k</text>
                                     <text x="10" y="145" font-size="10" fill="#999">10k</text>
                                     <text x="10" y="195" font-size="10" fill="#999">5k</text>
                                     <text x="10" y="240" font-size="10" fill="#999">0</text>
-
+                                    
                                     <!-- Line chart -->
-                                    <path d="M 50,230 L 80,220 L 110,215 L 140,210 L 170,200 L 200,190 L 230,180 L 260,160 L 290,130 L 320,80 L 350,40"
-                                          stroke="#7C3AED"
-                                          stroke-width="3"
-                                          fill="none"
+                                    <path d="M 50,230 L 80,220 L 110,215 L 140,210 L 170,200 L 200,190 L 230,180 L 260,160 L 290,130 L 320,80 L 350,40" 
+                                          stroke="#7C3AED" 
+                                          stroke-width="3" 
+                                          fill="none" 
                                           stroke-linecap="round"
                                           stroke-linejoin="round"/>
-
+                                    
                                     <!-- Data point with popup -->
                                     <circle cx="350" cy="40" r="5" fill="#7C3AED"/>
-
+                                    
                                     <!-- Popup -->
                                     <g transform="translate(280, 10)">
                                         <rect width="110" height="50" fill="white" stroke="#e0e0e0" stroke-width="1" rx="4"/>
@@ -1236,7 +1141,7 @@
                             Empower Your Team →
                         </a>
                     </div>
-                    <div class="bg-white rounded-2xl insights-card-shadow p-6 insights-card-gradient">
+                    <div class="bg-white rounded-2xl card-shadow p-6 card-gradient">
                         <div class="bg-white rounded-lg p-4">
                             <div class="grid grid-cols-2 gap-4">
                                 <!-- Left side: Bar chart -->
@@ -1351,9 +1256,90 @@
             </div>
         </div>
     </section>
+<!-- ===================== END SECTION ===================== -->
 
-    <!-- Mixpanel Metric Tree Section -->
-    <section class="py-20 px-6">
+<!-- ============================
+  THE ENGINE FOR CONTINUOUS INNOVATION
+================================== -->
+<section class="w-full bg-[#f5f7fa] py-24 relative overflow-hidden">
+
+  <!-- Background gradient blur (similar Lens vibe) -->
+  <div class="absolute top-20 right-10 w-96 h-96 bg-purple-300/30 blur-3xl rounded-full"></div>
+  <div class="absolute bottom-20 left-10 w-96 h-96 bg-indigo-300/30 blur-3xl rounded-full"></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10" style="max-width: calc(100% - 100px);">
+
+    <!-- LEFT CONTENT -->
+    <div class="space-y-8 animate__animated animate__fadeInUp">
+      <h2 class="text-4xl lg:text-5xl font-bold text-[#1e1e2f] leading-tight">
+        The engine for continuous<br />
+        <span class="text-purple-600">innovation</span>
+      </h2>
+
+      <p class="text-lg text-[#4b4b68] leading-relaxed">
+        Lens helps you understand how users engage with your product so you can improve retention,
+        optimize funnels, and measure what truly matters.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex gap-4 pt-4">
+        <a href="#"
+           class="px-6 py-3 bg-purple-600 text-white font-semibold rounded-xl hover:bg-purple-700 transition-all">
+          Get Started
+        </a>
+        <a href="#"
+           class="px-6 py-3 border border-purple-400 text-purple-600 font-semibold rounded-xl hover:bg-purple-50 transition-all">
+          Contact Sales
+        </a>
+      </div>
+
+      <!-- Stats row -->
+      <div class="flex items-center gap-12 pt-8">
+        <div>
+          <h3 class="text-3xl lg:text-4xl font-bold text-[#1e1e2f]">30%</h3>
+          <p class="text-sm text-[#4b4b68]">Increase in retention</p>
+        </div>
+        <div>
+          <h3 class="text-3xl lg:text-4xl font-bold text-[#1e1e2f]">50M+</h3>
+          <p class="text-sm text-[#4b4b68]">Events tracked daily</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE VISUAL PANEL -->
+    <div class="relative animate__animated animate__fadeInUp animate__delay-1s">
+
+      <!-- Device frame style container -->
+      <div class="bg-white/60 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 overflow-hidden">
+        <div class="p-6">
+
+          <!-- Screenshot Demo Image -->
+          <img src="https://via.placeholder.com/900x600.png?text=Analytics+Dashboard"
+               alt="Analytics Dashboard"
+               class="rounded-xl shadow-lg w-full">
+
+        </div>
+      </div>
+
+      <!-- Floating small cards (Lens-like animated elements) -->
+      <div class="absolute -top-8 -right-8 w-48 bg-white shadow-xl rounded-2xl p-4 animate-bounce">
+        <img src="https://via.placeholder.com/400x300.png?text=Insights"
+             class="rounded-lg" />
+      </div>
+
+      <div class="absolute bottom-10 -left-10 w-44 bg-white shadow-xl rounded-2xl p-4 animate-pulse">
+        <img src="https://via.placeholder.com/400x300.png?text=User+Trend"
+             class="rounded-lg" />
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+  THE ENGINE FOR CONTINUOUS INNOVATION 2
+================================== -->
+ <section class="py-20 px-6">
         <div class="max-w-7xl mx-auto">
             <!-- Header -->
             <div class="text-center mb-16">
@@ -1361,7 +1347,7 @@
                     The engine for continuous innovation
                 </h2>
                 <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-                    Mixpanel is the AI-powered data clarity platform that helps you see<br>
+                    Lens is the AI-powered data clarity platform that helps you see<br>
                     the truth, act faster, and create the best customer experiences.
                 </p>
                 <button class="bg-gray-900 text-white px-8 py-3 rounded-full hover:bg-gray-800 font-medium">
@@ -1370,16 +1356,16 @@
             </div>
 
             <!-- Metric Tree Visualization -->
-            <div class="relative metric-tree-dotted-bg rounded-3xl p-12 min-h-[600px]">
+            <div class="relative dotted-bg rounded-3xl p-12 min-h-[600px]">
                 <!-- Top Metric Card -->
                 <div class="flex justify-center mb-8">
-                    <div class="metric-tree-card bg-white rounded-xl shadow-lg p-4 w-64 relative">
+                    <div class="metric-card bg-white rounded-xl shadow-lg p-4 w-64 relative">
                         <div class="flex items-center text-xs text-gray-500 mb-2">
                             <span class="mr-1">⊕</span>
                             <span>Annual Recurring Revenue</span>
                         </div>
                         <div class="text-4xl font-bold mb-2">$1.2M</div>
-                        <div class="metric-tree-badge metric-tree-badge-1 inline-block bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-medium absolute -top-2 right-4">
+                        <div class="badge badge-1 inline-block bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-medium absolute -top-2 right-4">
                             Ava Singh
                         </div>
                         <div class="grid grid-cols-2 gap-2 mt-3">
@@ -1398,26 +1384,26 @@
                 <!-- SVG Connection Lines -->
                 <svg class="absolute top-0 left-0 w-full h-full pointer-events-none" style="z-index: 1;">
                     <!-- Top to middle left -->
-                    <path class="metric-tree-connecting-line metric-tree-line-1" d="M 580 200 Q 480 280 380 360"
+                    <path class="connecting-line line-1" d="M 580 200 Q 480 280 380 360" 
                           stroke="#d8b4fe" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
                     <!-- Top to middle right -->
-                    <path class="metric-tree-connecting-line metric-tree-line-2" d="M 620 200 Q 720 280 820 360"
+                    <path class="connecting-line line-2" d="M 620 200 Q 720 280 820 360" 
                           stroke="#d8b4fe" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
                     <!-- Middle left to bottom left -->
-                    <path class="metric-tree-connecting-line metric-tree-line-3" d="M 380 440 L 380 520"
+                    <path class="connecting-line line-3" d="M 380 440 L 380 520" 
                           stroke="#d8b4fe" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
                     <!-- Middle right to bottom middle -->
-                    <path class="metric-tree-connecting-line metric-tree-line-4" d="M 820 440 Q 720 480 620 520"
+                    <path class="connecting-line line-4" d="M 820 440 Q 720 480 620 520" 
                           stroke="#d8b4fe" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
                     <!-- Middle right to bottom right -->
-                    <path class="metric-tree-connecting-line metric-tree-line-5" d="M 820 440 L 900 520"
+                    <path class="connecting-line line-5" d="M 820 440 L 900 520" 
                           stroke="#d8b4fe" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
                 </svg>
 
                 <!-- Middle Row Metrics -->
                 <div class="flex justify-between items-center mb-12 px-12" style="position: relative; z-index: 2;">
                     <!-- Left Metric -->
-                    <div class="metric-tree-card bg-white rounded-xl shadow-lg p-4 w-64">
+                    <div class="metric-card bg-white rounded-xl shadow-lg p-4 w-64">
                         <div class="flex items-center text-xs text-gray-500 mb-2">
                             <span class="mr-1">⊕</span>
                             <span>Referral Engagement</span>
@@ -1440,13 +1426,13 @@
                     </div>
 
                     <!-- Right Metric -->
-                    <div class="metric-tree-card bg-white rounded-xl shadow-lg p-4 w-64 relative">
+                    <div class="metric-card bg-white rounded-xl shadow-lg p-4 w-64 relative">
                         <div class="flex items-center text-xs text-gray-500 mb-2">
                             <span class="mr-1">⊕</span>
                             <span>Day 30 Retention</span>
                         </div>
                         <div class="text-4xl font-bold mb-2">21.4%</div>
-                        <div class="metric-tree-badge metric-tree-badge-2 inline-block bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium absolute -top-2 right-4">
+                        <div class="badge badge-2 inline-block bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium absolute -top-2 right-4">
                             Hugo Silva
                         </div>
                         <div class="grid grid-cols-2 gap-2 mt-3">
@@ -1465,13 +1451,13 @@
                 <!-- Bottom Row Metrics -->
                 <div class="flex justify-between items-start px-4" style="position: relative; z-index: 2;">
                     <!-- Left Metric -->
-                    <div class="metric-tree-card bg-white rounded-xl shadow-lg p-4 w-60">
+                    <div class="metric-card bg-white rounded-xl shadow-lg p-4 w-60">
                         <div class="flex items-center text-xs text-gray-500 mb-2">
                             <span class="mr-1">⊕</span>
                             <span>Inbound Leads</span>
                         </div>
                         <div class="text-4xl font-bold mb-2">29.8k</div>
-                        <div class="metric-tree-badge metric-tree-badge-3 inline-block bg-yellow-500 text-white px-3 py-1 rounded-full text-xs font-medium mb-2">
+                        <div class="badge badge-3 inline-block bg-yellow-500 text-white px-3 py-1 rounded-full text-xs font-medium mb-2">
                             Mai Lin
                         </div>
                         <div class="text-xs text-gray-500 mb-2">users</div>
@@ -1484,7 +1470,7 @@
                     </div>
 
                     <!-- Middle Metric -->
-                    <div class="metric-tree-card bg-white rounded-xl shadow-lg p-4 w-60">
+                    <div class="metric-card bg-white rounded-xl shadow-lg p-4 w-60">
                         <div class="flex items-center text-xs text-gray-500 mb-2">
                             <span class="mr-1">⊕</span>
                             <span>Avg Profit per Referral</span>
@@ -1504,7 +1490,7 @@
                     </div>
 
                     <!-- Right Metric -->
-                    <div class="metric-tree-card bg-white rounded-xl shadow-lg p-4 w-60">
+                    <div class="metric-card bg-white rounded-xl shadow-lg p-4 w-60">
                         <div class="flex items-center text-xs text-gray-500 mb-2">
                             <span class="mr-1">🚩</span>
                             <span>Strategy Pivot</span>
@@ -1512,7 +1498,7 @@
                         <div class="text-sm text-gray-700 mb-2">
                             Build and launch a new marketing strategy by May.
                         </div>
-                        <div class="metric-tree-badge metric-tree-badge-4 inline-block bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium">
+                        <div class="badge badge-4 inline-block bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium">
                             Hugo Silva
                         </div>
                         <div class="mt-2 text-xs text-blue-600 font-medium">
@@ -1522,7 +1508,7 @@
                 </div>
 
                 <!-- Side Info Cards -->
-                <div class="absolute left-8 top-1/3 bg-white rounded-xl shadow-lg p-6 w-72 metric-tree-card">
+                <div class="absolute left-8 top-1/3 bg-white rounded-xl shadow-lg p-6 w-72 metric-card">
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
                         Get immediate answers
                     </h3>
@@ -1531,7 +1517,7 @@
                     </p>
                 </div>
 
-                <div class="absolute right-8 top-1/3 bg-white rounded-xl shadow-lg p-6 w-72 metric-tree-card">
+                <div class="absolute right-8 top-1/3 bg-white rounded-xl shadow-lg p-6 w-72 metric-card">
                     <h3 class="text-xl font-bold text-gray-900 mb-3">
                         Apply your updates and optimize
                     </h3>
@@ -1543,20 +1529,23 @@
         </div>
     </section>
 
-    <!-- Mixpanel Why Teams Choose Section -->
-    <section class="py-20 px-6">
+
+<!-- ============================================================
+   Why teams choose Lens Section Start 
+=============================================================== -->
+<section class="py-20 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <!-- Left Side - Carousel -->
                 <div>
                     <h2 class="text-5xl font-bold text-gray-900 mb-8">
-                        Why teams choose Mixpanel
+                        Why teams choose Lens
                     </h2>
-
-                    <div class="rounded-3xl overflow-hidden shadow-2xl team-card-gradient p-6">
-                        <div class="team-carousel-container bg-white rounded-2xl" style="min-height: 500px;">
+                    
+                    <div class="rounded-3xl overflow-hidden shadow-2xl card-gradient p-6">
+                        <div class="carousel-container bg-white rounded-2xl" style="min-height: 500px;">
                             <!-- Slide 1: Replays -->
-                            <div class="team-carousel-slide active p-6">
+                            <div class="carousel-slide active p-6">
                                 <div class="mb-4">
                                     <div class="flex items-center justify-between mb-4">
                                         <div>
@@ -1640,7 +1629,7 @@
                             </div>
 
                             <!-- Slide 2: Analytics Dashboard -->
-                            <div class="team-carousel-slide p-6">
+                            <div class="carousel-slide p-6">
                                 <div class="bg-purple-500 rounded-t-lg h-64 relative overflow-hidden">
                                     <div class="absolute inset-0 grid grid-cols-3 gap-px bg-purple-400">
                                         <div class="bg-purple-500"></div>
@@ -1683,7 +1672,7 @@
                             </div>
 
                             <!-- Slide 3: Charts View -->
-                            <div class="team-carousel-slide p-6">
+                            <div class="carousel-slide p-6">
                                 <div class="space-y-4">
                                     <h3 class="text-xl font-bold">Analytics Overview</h3>
                                     <div class="grid grid-cols-2 gap-4">
@@ -1700,7 +1689,7 @@
                                     </div>
                                     <div class="bg-gray-50 rounded-lg p-4 h-48">
                                         <svg width="100%" height="100%" viewBox="0 0 400 180">
-                                            <path d="M 0,140 L 50,130 L 100,110 L 150,120 L 200,80 L 250,90 L 300,60 L 350,70 L 400,40"
+                                            <path d="M 0,140 L 50,130 L 100,110 L 150,120 L 200,80 L 250,90 L 300,60 L 350,70 L 400,40" 
                                                   stroke="#8B5CF6" stroke-width="3" fill="none"/>
                                         </svg>
                                     </div>
@@ -1708,7 +1697,7 @@
                             </div>
 
                             <!-- Slide 4: User Insights -->
-                            <div class="team-carousel-slide p-6">
+                            <div class="carousel-slide p-6">
                                 <h3 class="text-xl font-bold mb-4">User Insights</h3>
                                 <div class="space-y-3">
                                     <div class="bg-gradient-to-r from-purple-500 to-purple-400 text-white rounded-lg p-4">
@@ -1746,7 +1735,7 @@
                             </div>
 
                             <!-- Slide 5: Retention Analysis -->
-                            <div class="team-carousel-slide p-6">
+                            <div class="carousel-slide p-6">
                                 <h3 class="text-xl font-bold mb-4">Retention Analysis</h3>
                                 <div class="space-y-4">
                                     <div class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-lg p-4">
@@ -1783,8 +1772,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="team-progress-bar mt-4">
-                            <div class="team-progress-fill"></div>
+                        <div class="progress-bar mt-4">
+                            <div class="progress-fill"></div>
                         </div>
                     </div>
                 </div>
@@ -1817,7 +1806,7 @@
                                 <h3 class="text-xl font-bold text-gray-900">Trusted by teams, not just analysts</h3>
                             </div>
                             <p class="text-gray-600 ml-8">
-                                From product managers to growth marketers, Mixpanel helps everyone make smarter decisions — not just the data-savvy few.
+                                From product managers to growth marketers, Lens helps everyone make smarter decisions — not just the data-savvy few.
                             </p>
                         </div>
 
@@ -1837,7 +1826,7 @@
                                 <h3 class="text-xl font-bold text-gray-900">Built to evolve</h3>
                             </div>
                             <p class="text-gray-600 ml-8">
-                                Whether you're scaling fast or maturing your analytics practice, Mixpanel grows with your needs.
+                                Whether you're scaling fast or maturing your analytics practice, Lens grows with your needs.
                             </p>
                         </div>
                     </div>
@@ -1847,45 +1836,127 @@
     </section>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const teamSlides = document.querySelectorAll('.team-carousel-slide');
-            const teamProgressFill = document.querySelector('.team-progress-fill');
-            let teamCurrentSlide = 0;
-            const teamTotalSlides = teamSlides.length;
-            const teamIntervalTime = 1000; // 1 second per slide
+        const slides = document.querySelectorAll('.carousel-slide');
+        const progressFill = document.querySelector('.progress-fill');
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        const intervalTime = 3000; // 3 seconds per slide
 
-            function showTeamSlide(index) {
-                teamSlides.forEach((slide, i) => {
-                    slide.classList.remove('active');
-                    if (i === index) {
-                        slide.classList.add('active');
-                    }
-                });
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+            
+            // Restart progress bar animation
+            progressFill.style.animation = 'none';
+            setTimeout(() => {
+                progressFill.style.animation = `progress ${intervalTime}ms linear`;
+            }, 10);
+        }
 
-                // Restart progress bar animation
-                teamProgressFill.style.animation = 'none';
-                setTimeout(() => {
-                    teamProgressFill.style.animation = `team-progress ${teamIntervalTime}ms linear`;
-                }, 10);
-            }
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
 
-            function nextTeamSlide() {
-                teamCurrentSlide = (teamCurrentSlide + 1) % teamTotalSlides;
-                showTeamSlide(teamCurrentSlide);
-            }
-
-            // Auto-rotate slides
-            setInterval(nextTeamSlide, teamIntervalTime);
-
-            // Initialize first slide
-            showTeamSlide(0);
-        });
+        // Auto-rotate slides
+        setInterval(nextSlide, intervalTime);
+        
+        // Initialize first slide
+        showSlide(0);
     </script>
 
-    <!-- Mixpanel Enterprise Section -->
-    <section class="enterprise-gradient-bg py-20 px-6 rounded-3xl mx-4 my-8">
-        <div class="enterprise-glow-effect"></div>
+<!-- ============================================================
+   Why teams choose Lens Section Start 2
+=============================================================== -->
+<section class="max-w-7xl mx-auto px-6 py-16" style="max-width: calc(100% - 100px);">
+  <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-12">
 
+    <!-- Left: Image Slider with Gradient Border -->
+    <div class="relative lg:w-1/2">
+      <div class="relative rounded-2xl overflow-hidden border-4 border-transparent bg-gradient-to-br from-purple-400 via-pink-300 to-blue-400 p-1">
+        <div class="rounded-2xl overflow-hidden relative h-[350px]">
+          <div class="carousel w-full h-full relative">
+            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=774&auto=format&fit=crop" class="carousel-item absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100">
+            <img src="https://images.unsplash.com/photo-1531538606174-0f90ff5dce83?q=80&w=774&auto=format&fit=crop" class="carousel-item absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0">
+            <img src="https://source.unsplash.com/600x400/?dashboard,ui" class="carousel-item absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0">
+            <img src="https://source.unsplash.com/600x400/?metrics,analytics" class="carousel-item absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Features -->
+    <div class="lg:w-1/2 flex flex-col justify-center gap-6">
+      <h2 class="text-3xl font-bold text-gray-900">Why teams choose Lens</h2>
+      <p class="text-gray-600 text-lg">We’re built to give Product, Engineering, Marketing, and Data teams the confidence to stop guessing and start growing.</p>
+      <button class="bg-gray-900 text-white px-6 py-2 rounded-full hover:bg-gray-800 transition w-max">
+        Book a Demo →
+      </button>
+
+      <div class="mt-8 flex flex-col gap-6">
+        <div class="flex items-start gap-3">
+          <div class="text-purple-500 mt-1">✔</div>
+          <div>
+            <h4 class="font-semibold text-gray-900">Built for speed</h4>
+            <p class="text-gray-500 text-sm">Explore user behavior, conversion trends, and retention patterns in seconds—no data team required.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <div class="text-purple-500 mt-1">✔</div>
+          <div>
+            <h4 class="font-semibold text-gray-900">Trusted by teams, not just analysts</h4>
+            <p class="text-gray-500 text-sm">From product managers to growth marketers, Lens helps everyone make smarter decisions — not just the data-savvy few.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <div class="text-purple-500 mt-1">✔</div>
+          <div>
+            <h4 class="font-semibold text-gray-900">Flexible by design</h4>
+            <p class="text-gray-500 text-sm">Connect your tech stack—from BigQuery to Segment to reverse ETL tools — so your data lives where you need it.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <div class="text-purple-500 mt-1">✔</div>
+          <div>
+            <h4 class="font-semibold text-gray-900">Built to evolve</h4>
+            <p class="text-gray-500 text-sm">Whether you’re scaling fast or maturing your analytics practice, Lens grows with your needs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const slides = document.querySelectorAll('.carousel-item');
+  let current = 0;
+  setInterval(() => {
+    slides[current].classList.remove('opacity-100');
+    slides[current].classList.add('opacity-0');
+    current = (current + 1) % slides.length;
+    slides[current].classList.remove('opacity-0');
+    slides[current].classList.add('opacity-100');
+  }, 3000);
+</script>
+<!-- ============================================================
+   Why teams choose Lens Section End
+=============================================================== -->
+
+
+<!-- ============================================================
+   ENTERPRISE READY SECTION START
+=============================================================== -->
+ <section class="gradient-bg py-20 px-6 rounded-3xl mx-4 my-8">
+        <div class="glow-effect"></div>
+        
         <div class="max-w-7xl mx-auto relative z-10">
             <!-- Header -->
             <div class="text-center mb-16">
@@ -1893,41 +1964,41 @@
                     Enterprise-ready.<br>Without the complexity.
                 </h2>
                 <p class="text-xl text-purple-100 mb-8 max-w-3xl mx-auto">
-                    Mixpanel supports the performance, flexibility, and governance modern teams need — with none of the legacy bloat.
+                    Lens supports the performance, flexibility, and governance modern teams need — with none of the legacy bloat.
                 </p>
-                <button class="enterprise-cta-button bg-white text-purple-900 px-8 py-3 rounded-full hover:bg-purple-50 font-medium">
-                    Explore Mixpanel for Enterprise →
+                <button class="cta-button bg-white text-purple-900 px-8 py-3 rounded-full hover:bg-purple-50 font-medium">
+                    Explore Lens for Enterprise →
                 </button>
             </div>
 
             <!-- Feature Cards -->
             <div class="grid md:grid-cols-4 gap-6 mb-24">
-                <div class="enterprise-feature-card rounded-2xl p-6 text-white">
-                    <div class="enterprise-checkmark mb-4 text-2xl">✓</div>
+                <div class="feature-card rounded-2xl p-6 text-white">
+                    <div class="checkmark mb-4 text-2xl">✓</div>
                     <h3 class="text-xl font-bold mb-3">Performance that scales</h3>
                     <p class="text-purple-100 text-sm">
                         Sub-second query times, even at billions of events per month.
                     </p>
                 </div>
 
-                <div class="enterprise-feature-card rounded-2xl p-6 text-white">
-                    <div class="enterprise-checkmark mb-4 text-2xl">✓</div>
+                <div class="feature-card rounded-2xl p-6 text-white">
+                    <div class="checkmark mb-4 text-2xl">✓</div>
                     <h3 class="text-xl font-bold mb-3">An open ecosystem</h3>
                     <p class="text-purple-100 text-sm">
-                        Mixpanel plays well with everyone. Connect to your existing stack with flexibility and no vendor lock-in.
+                        Lens plays well with everyone. Connect to your existing stack with flexibility and no vendor lock-in.
                     </p>
                 </div>
 
-                <div class="enterprise-feature-card rounded-2xl p-6 text-white">
-                    <div class="enterprise-checkmark mb-4 text-2xl">✓</div>
+                <div class="feature-card rounded-2xl p-6 text-white">
+                    <div class="checkmark mb-4 text-2xl">✓</div>
                     <h3 class="text-xl font-bold mb-3">Secure by default</h3>
                     <p class="text-purple-100 text-sm">
                         SOC 2 Type II, ISO 27001, HIPAA-ready, SSO/SAML, and audit logs.
                     </p>
                 </div>
 
-                <div class="enterprise-feature-card rounded-2xl p-6 text-white">
-                    <div class="enterprise-checkmark mb-4 text-2xl">✓</div>
+                <div class="feature-card rounded-2xl p-6 text-white">
+                    <div class="checkmark mb-4 text-2xl">✓</div>
                     <h3 class="text-xl font-bold mb-3">Governance made easy</h3>
                     <p class="text-purple-100 text-sm">
                         Define source-of-truth metrics, manage access, and keep teams aligned with trusted data.
@@ -1936,13 +2007,13 @@
             </div>
 
             <!-- Testimonial Section -->
-            <div class="enterprise-testimonial-container">
+            <div class="testimonial-container">
                 <!-- Navigation Buttons -->
                 <div class="flex justify-center space-x-4 mb-8">
-                    <button class="enterprise-nav-button w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white">
+                    <button class="nav-button w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white">
                         ←
                     </button>
-                    <button class="enterprise-nav-button w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white">
+                    <button class="nav-button w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white">
                         →
                     </button>
                 </div>
@@ -1962,7 +2033,7 @@
                     <!-- Quote -->
                     <div class="text-white">
                         <p class="text-2xl md:text-3xl font-medium mb-6 leading-relaxed">
-                            "Mixpanel helps us enable our customers for success. What started as a need for simple marketing metrics turned into custom product metrics for more than 100 different stakeholders across the company."
+                            "Lens helps us enable our customers for success. What started as a need for simple marketing metrics turned into custom product metrics for more than 100 different stakeholders across the company."
                         </p>
                         <p class="text-purple-200">
                             <span class="font-semibold">Drew Ashlock</span> - Senior Product Manager
@@ -1972,21 +2043,21 @@
 
                 <!-- Stats -->
                 <div class="grid md:grid-cols-3 gap-8 mb-12">
-                    <div class="enterprise-stat-number text-center">
+                    <div class="stat-number text-center">
                         <div class="text-5xl md:text-6xl font-bold text-white mb-2">
                             <sup class="text-3xl">+</sup>15<sub class="text-3xl">%</sub>
                         </div>
                         <div class="text-purple-200 text-sm">in accounts</div>
                     </div>
 
-                    <div class="enterprise-stat-number text-center">
+                    <div class="stat-number text-center">
                         <div class="text-5xl md:text-6xl font-bold text-white mb-2">
                             <sup class="text-3xl">+</sup>5<sub class="text-3xl">%</sub>
                         </div>
                         <div class="text-purple-200 text-sm">in upgrades</div>
                     </div>
 
-                    <div class="enterprise-stat-number text-center">
+                    <div class="stat-number text-center">
                         <div class="text-5xl md:text-6xl font-bold text-white mb-2">
                             <sup class="text-3xl">+</sup>10<sub class="text-3xl">%</sub>
                         </div>
@@ -1996,7 +2067,7 @@
 
                 <!-- CTA Button -->
                 <div class="text-center">
-                    <button class="enterprise-cta-button bg-white text-purple-900 px-8 py-3 rounded-full hover:bg-purple-50 font-medium">
+                    <button class="cta-button bg-white text-purple-900 px-8 py-3 rounded-full hover:bg-purple-50 font-medium">
                         Read Case Study →
                     </button>
                 </div>
@@ -2005,83 +2076,219 @@
     </section>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add intersection observer for animation triggers
-            const enterpriseObserverOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -100px 0px'
-            };
+        // Add intersection observer for animation triggers
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
 
-            const enterpriseObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animationPlayState = 'running';
-                    }
-                });
-            }, enterpriseObserverOptions);
-
-            document.querySelectorAll('.enterprise-feature-card, .enterprise-testimonial-container, .enterprise-stat-number').forEach(el => {
-                enterpriseObserver.observe(el);
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
             });
+        }, observerOptions);
 
-            // Add hover effect for cards
-            const enterpriseCards = document.querySelectorAll('.enterprise-feature-card');
-            enterpriseCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-10px) scale(1.02)';
-                });
+        document.querySelectorAll('.feature-card, .testimonial-container, .stat-number').forEach(el => {
+            observer.observe(el);
+        });
 
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) scale(1)';
-                });
+        // Add hover effect for cards
+        const cards = document.querySelectorAll('.feature-card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
             });
-
-            // Add click effect for buttons
-            const enterpriseButtons = document.querySelectorAll('.enterprise-cta-button, .enterprise-nav-button');
-            enterpriseButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    this.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        this.style.transform = '';
-                    }, 150);
-                });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
             });
+        });
 
-            // Animate stats on scroll
-            const enterpriseStats = document.querySelectorAll('.enterprise-stat-number');
-            const animateEnterpriseStats = (entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const numberElement = entry.target.querySelector('.text-5xl, .text-6xl');
-                        if (numberElement && !numberElement.classList.contains('enterprise-animated')) {
-                            numberElement.classList.add('enterprise-animated');
-                            const text = numberElement.textContent;
-                            const match = text.match(/\d+/);
-                            if (match) {
-                                const targetNumber = parseInt(match[0]);
-                                let currentNumber = 0;
-                                const increment = targetNumber / 30;
-                                const timer = setInterval(() => {
-                                    currentNumber += increment;
-                                    if (currentNumber >= targetNumber) {
-                                        currentNumber = targetNumber;
-                                        clearInterval(timer);
-                                    }
-                                    numberElement.innerHTML = text.replace(/\d+/, Math.floor(currentNumber));
-                                }, 30);
-                            }
+        // Add click effect for buttons
+        const buttons = document.querySelectorAll('.cta-button, .nav-button');
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+
+        // Animate stats on scroll
+        const stats = document.querySelectorAll('.stat-number');
+        const animateStats = (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const numberElement = entry.target.querySelector('.text-5xl, .text-6xl');
+                    if (numberElement && !numberElement.classList.contains('animated')) {
+                        numberElement.classList.add('animated');
+                        const text = numberElement.textContent;
+                        const match = text.match(/\d+/);
+                        if (match) {
+                            const targetNumber = parseInt(match[0]);
+                            let currentNumber = 0;
+                            const increment = targetNumber / 30;
+                            const timer = setInterval(() => {
+                                currentNumber += increment;
+                                if (currentNumber >= targetNumber) {
+                                    currentNumber = targetNumber;
+                                    clearInterval(timer);
+                                }
+                                numberElement.innerHTML = text.replace(/\d+/, Math.floor(currentNumber));
+                            }, 30);
                         }
                     }
-                });
-            };
+                }
+            });
+        };
 
-            const enterpriseStatsObserver = new IntersectionObserver(animateEnterpriseStats, enterpriseObserverOptions);
-            enterpriseStats.forEach(stat => enterpriseStatsObserver.observe(stat));
-        });
+        const statsObserver = new IntersectionObserver(animateStats, observerOptions);
+        stats.forEach(stat => statsObserver.observe(stat));
     </script>
 
-    <!-- Mixpanel Support Section -->
-    <section class="py-20 px-6">
+<!-- ============================================================
+   ENTERPRISE READY SECTION 1 START 
+=============================================================== -->
+<section class="relative py-28 bg-[#0F0B1E] overflow-hidden">
+
+    <!-- Big Rounded Purple Container -->
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="relative rounded-[48px] bg-gradient-to-b 
+            from-[#6D4AFF] via-[#7F5BFF] to-[#3A237A]
+            p-[2px] shadow-2xl overflow-hidden">
+
+            <!-- INNER CONTAINER -->
+            <div class="rounded-[46px] bg-gradient-to-b 
+                from-[#2A1C54] via-[#26194B] to-[#1E113C]
+                px-10 py-20 text-center">
+
+                <!-- HEADINGS -->
+                <h2 class="text-white text-4xl md:text-5xl font-extrabold leading-tight">
+                    Enterprise-ready.<br/>Without the complexity.
+                </h2>
+
+                <p class="text-[#C0B8FF] mt-6 max-w-2xl mx-auto text-lg leading-relaxed">
+                    Lens supports the performance, flexibility, and governance<br/>
+                    modern teams need — with none of the legacy bloat.
+                </p>
+
+                <!-- BUTTON -->
+                <button class="mt-8 px-7 py-3 bg-white text-[#2A1C54] font-semibold rounded-xl shadow-lg hover:bg-gray-100 transition">
+                    Explore Lens for Enterprise
+                </button>
+
+                <!-- 4 FEATURE CARDS -->
+                <div class="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                    <!-- SINGLE CARD -->
+                    <div class="bg-white/10 border border-white/10 backdrop-blur-xl 
+                        rounded-2xl p-6 text-left hover:bg-white/15 transition">
+                        <div class="w-12 h-12 mb-4">
+                            <img src="https://via.placeholder.com/48" class="opacity-80" />
+                        </div>
+                        <h3 class="text-white font-semibold mb-2">Performance that scales</h3>
+                        <p class="text-[#C5C5D4] text-sm leading-relaxed">Billions of monthly events, millions of queries per month.</p>
+                    </div>
+
+                    <div class="bg-white/10 border border-white/10 backdrop-blur-xl 
+                        rounded-2xl p-6 text-left hover:bg-white/15 transition">
+                        <div class="w-12 h-12 mb-4">
+                            <img src="https://via.placeholder.com/48" />
+                        </div>
+                        <h3 class="text-white font-semibold mb-2">A proven ecosystem</h3>
+                        <p class="text-[#C5C5D4] text-sm">Integrates easily with your warehouse, CDP, and workflow tools.</p>
+                    </div>
+
+                    <div class="bg-white/10 border border-white/10 backdrop-blur-xl 
+                        rounded-2xl p-6 text-left hover:bg-white/15 transition">
+                        <div class="w-12 h-12 mb-4">
+                            <img src="https://via.placeholder.com/48" />
+                        </div>
+                        <h3 class="text-white font-semibold mb-2">Secure by default</h3>
+                        <p class="text-[#C5C5D4] text-sm">SOC2 Type II, GDPR, HIPAA readiness, SSO, and encryption.</p>
+                    </div>
+
+                    <div class="bg-white/10 border border-white/10 backdrop-blur-xl 
+                        rounded-2xl p-6 text-left hover:bg-white/15 transition">
+                        <div class="w-12 h-12 mb-4">
+                            <img src="https://via.placeholder.com/48" />
+                        </div>
+                        <h3 class="text-white font-semibold mb-2">Governance made easy</h3>
+                        <p class="text-[#C5C5D4] text-sm">Define schemas, track lineage, align teams with trusted data.</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- LIGHT STRIP (pink neon bar) -->
+    <div class="w-full flex justify-center mt-[-2px]">
+        <div class="w-[70%] h-6 bg-gradient-to-r 
+            from-purple-300 via-pink-200 to-purple-300 
+            blur-xl opacity-80 rounded-full"></div>
+    </div>
+
+    <!-- DEEP SHADOW FADE -->
+    <div class="w-full h-40 bg-gradient-to-b from-transparent to-black opacity-50 -mt-8"></div>
+
+
+    <!-- BELOW THIS: TESTIMONIAL SECTION BLOCK -->
+    <div class="max-w-4xl mx-auto mt-16 text-center animate__animated animate__fadeInUp">
+        
+        <!-- COMPANY LOGO -->
+        <div class="flex justify-center mb-6">
+            <div class="w-40 opacity-90">
+                <img src="https://via.placeholder.com/200x80?text=Logo" class="mix-blend-screen">
+            </div>
+        </div>
+
+        <!-- QUOTE TEXT -->
+        <p class="text-white text-xl md:text-2xl leading-relaxed px-6">
+            “Lens helps us enable our customers for success. What started as a need for simple marketing metrics
+            turned into custom product metrics for more than 100 different stakeholders across the company.”
+        </p>
+
+        <p class="text-[#C5C5D4] mt-4">
+            Dave Atkinson – Senior Product Manager
+        </p>
+
+        <!-- METRICS -->
+        <div class="flex justify-center gap-12 mt-10 text-white">
+            <div class="text-center">
+                <div class="text-3xl font-bold">15×</div>
+                <div class="text-sm text-[#C5C5D4] mt-1">Faster insights</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-bold">5×</div>
+                <div class="text-sm text-[#C5C5D4] mt-1">More engagement</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-bold">10×</div>
+                <div class="text-sm text-[#C5C5D4] mt-1">More retention</div>
+            </div>
+        </div>
+
+        <!-- CTA BUTTON -->
+        <button class="mt-10 px-8 py-3 border border-white/30 text-white rounded-xl hover:bg-white/10 transition">
+            Read Case Study
+        </button>
+
+    </div>
+
+</section>
+<!-- ============================================================
+   ENTERPRISE READY SECTION 1 END
+=============================================================== -->
+
+<!-- ============================================================
+   Support for every step of the journey SECTION START
+=============================================================== -->
+<section class="py-20 px-6">
         <div class="max-w-7xl mx-auto">
             <!-- Header -->
             <div class="max-w-xl mb-16">
@@ -2089,7 +2296,7 @@
                     Support for every<br>step of the journey
                 </h2>
                 <p class="text-lg text-gray-600">
-                    Whether you're moving fast on your own or need hands-on help, Mixpanel has you covered.
+                    Whether you're moving fast on your own or need hands-on help, Lens has you covered.
                 </p>
             </div>
 
@@ -2097,11 +2304,11 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Card 1: Partner with experts -->
                 <div class="support-card bg-gradient-to-br from-purple-100 to-purple-50 rounded-3xl p-8 cursor-pointer">
-                    <div class="support-icon-container mb-8">
-                        <div class="support-handshake-icon">
-                            <div class="support-hand support-hand-left"></div>
-                            <div class="support-handshake-middle"></div>
-                            <div class="support-hand support-hand-right"></div>
+                    <div class="icon-container mb-8">
+                        <div class="handshake-icon">
+                            <div class="hand hand-left"></div>
+                            <div class="handshake-middle"></div>
+                            <div class="hand hand-right"></div>
                         </div>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">
@@ -2110,19 +2317,19 @@
                     <p class="text-gray-600 mb-6">
                         Get strategic guidance and premium support from our enterprise team.
                     </p>
-                    <a href="#" class="support-cta-link text-gray-900 font-semibold hover:text-purple-700">
+                    <a href="#" class="cta-link text-gray-900 font-semibold hover:text-purple-700">
                         Explore Support
                     </a>
                 </div>
 
                 <!-- Card 2: Learn on your own terms -->
                 <div class="support-card bg-gradient-to-br from-blue-100 to-blue-50 rounded-3xl p-8 cursor-pointer">
-                    <div class="support-icon-container mb-8">
-                        <div class="support-toggle-icon">
-                            <div class="support-toggle-bg">
-                                <div class="support-toggle-circle"></div>
+                    <div class="icon-container mb-8">
+                        <div class="toggle-icon">
+                            <div class="toggle-bg">
+                                <div class="toggle-circle"></div>
                             </div>
-                            <div class="support-toggle-bg" style="top: 30%; transform: translate(-50%, -50%) scale(0.8); opacity: 0.6;"></div>
+                            <div class="toggle-bg" style="top: 30%; transform: translate(-50%, -50%) scale(0.8); opacity: 0.6;"></div>
                         </div>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">
@@ -2131,20 +2338,20 @@
                     <p class="text-gray-600 mb-6">
                         Explore docs, tutorials, and free courses at your own pace.
                     </p>
-                    <a href="#" class="support-cta-link text-gray-900 font-semibold hover:text-blue-700">
+                    <a href="#" class="cta-link text-gray-900 font-semibold hover:text-blue-700">
                         Explore Docs
                     </a>
                 </div>
 
                 <!-- Card 3: Tap into fellow pros -->
                 <div class="support-card bg-gradient-to-br from-red-100 to-pink-50 rounded-3xl p-8 cursor-pointer">
-                    <div class="support-icon-container mb-8">
-                        <div class="support-community-icon">
-                            <div class="support-community-platform">
-                                <div class="support-community-person"></div>
-                                <div class="support-dot-1 support-community-dots"></div>
-                                <div class="support-dot-2 support-community-dots"></div>
-                                <div class="support-dot-3 support-community-dots"></div>
+                    <div class="icon-container mb-8">
+                        <div class="community-icon">
+                            <div class="community-platform">
+                                <div class="community-person"></div>
+                                <div class="community-dots dot-1"></div>
+                                <div class="community-dots dot-2"></div>
+                                <div class="community-dots dot-3"></div>
                             </div>
                         </div>
                     </div>
@@ -2154,7 +2361,7 @@
                     <p class="text-gray-600 mb-6">
                         Join 12,000+ peers in the largest analytics community.
                     </p>
-                    <a href="#" class="support-cta-link text-gray-900 font-semibold hover:text-red-700">
+                    <a href="#" class="cta-link text-gray-900 font-semibold hover:text-red-700">
                         Explore Community
                     </a>
                 </div>
@@ -2163,205 +2370,634 @@
     </section>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add intersection observer for scroll animations
-            const supportObserverOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
+        // Add intersection observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-            const supportObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animationPlayState = 'running';
-                    }
-                });
-            }, supportObserverOptions);
-
-            document.querySelectorAll('.support-card').forEach(card => {
-                supportObserver.observe(card);
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
             });
+        }, observerOptions);
 
-            // Add click animation
-            document.querySelectorAll('.support-card').forEach(card => {
-                card.addEventListener('click', function() {
-                    this.style.transform = 'translateY(-15px) scale(0.98)';
-                    setTimeout(() => {
-                        this.style.transform = '';
-                    }, 200);
-                });
+        document.querySelectorAll('.support-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Add click animation
+        document.querySelectorAll('.support-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'translateY(-15px) scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
             });
+        });
 
-            // Add parallax effect on mouse move
-            document.querySelectorAll('.support-card').forEach(card => {
-                card.addEventListener('mousemove', function(e) {
-                    const rect = this.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-
-                    const rotateX = (y - centerY) / 20;
-                    const rotateY = (centerX - x) / 20;
-
-                    const icon = this.querySelector('.support-icon-container');
-                    if (icon) {
-                        icon.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-                    }
-                });
-
-                card.addEventListener('mouseleave', function() {
-                    const icon = this.querySelector('.support-icon-container');
-                    if (icon) {
-                        icon.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
-                    }
-                });
+        // Add parallax effect on mouse move
+        document.querySelectorAll('.support-card').forEach(card => {
+            card.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+                
+                const icon = this.querySelector('.icon-container');
+                if (icon) {
+                    icon.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                }
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                const icon = this.querySelector('.icon-container');
+                if (icon) {
+                    icon.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+                }
             });
         });
     </script>
 
-    <!-- Mixpanel Footer Section -->
-    <section class="footer-gradient-wrapper">
-        <div class="footer-container">
+<!-- ============================================================
+   Support for every step of the journey 1 SECTION START
+=============================================================== -->
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <!-- Heading -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Support for every <br> step of the journey</h2>
+      <p class="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">
+        Whether you're moving fast on your own or need hands-on help, Lens has you covered.
+      </p>
+    </div>
+
+
+<!-- Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+  <!-- Card 1 -->
+  <div class="bg-gradient-to-br from-purple-200 to-purple-100 rounded-xl p-6 flex flex-col items-center text-center shadow-md hover:shadow-xl transition-shadow duration-300">
+    <div class="mb-4">
+      <!-- Example Icon -->
+      <svg class="w-12 h-12 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M20 12l-8-8-8 8h6v8h4v-8h6z" />
+      </svg>
+    </div>
+    <h3 class="text-lg font-semibold text-gray-900 mb-2">Partner with experts</h3>
+    <p class="text-gray-600 text-sm mb-4">
+      Get strategic guidance and premium support from our enterprise team.
+    </p>
+    <a href="#" class="text-purple-700 font-medium hover:underline">Explore Support &rarr;</a>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="bg-gradient-to-br from-blue-200 to-blue-100 rounded-xl p-6 flex flex-col items-center text-center shadow-md hover:shadow-xl transition-shadow duration-300">
+    <div class="mb-4">
+      <!-- Example Icon -->
+      <svg class="w-12 h-12 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M3 12h18M12 3v18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <h3 class="text-lg font-semibold text-gray-900 mb-2">Learn on your own terms</h3>
+    <p class="text-gray-600 text-sm mb-4">
+      Explore docs, tutorials, and free courses at your own pace.
+    </p>
+    <a href="#" class="text-blue-700 font-medium hover:underline">Explore Docs &rarr;</a>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="bg-gradient-to-br from-red-200 to-red-100 rounded-xl p-6 flex flex-col items-center text-center shadow-md hover:shadow-xl transition-shadow duration-300">
+    <div class="mb-4">
+      <!-- Example Icon -->
+      <svg class="w-12 h-12 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 12c2 0 4-1 4-3s-2-3-4-3-4 1-4 3 2 3 4 3zm0 2c-4 0-8 2-8 4v2h16v-2c0-2-4-4-8-4z" />
+      </svg>
+    </div>
+    <h3 class="text-lg font-semibold text-gray-900 mb-2">Tap into fellow pros</h3>
+    <p class="text-gray-600 text-sm mb-4">
+      Join 12,000+ peers in the largest analytics community.
+    </p>
+    <a href="#" class="text-red-700 font-medium hover:underline">Explore Community &rarr;</a>
+  </div>
+</div>
+
+
+  </div>
+</section>
+<!-- ============================================================
+   ESupport for every step of the journey 1 SECTION END
+=============================================================== -->
+
+
+
+	<!-- Portfolio Section -->
+
+	<!-- Testimonial Section -->
+
+	<!-- Testimonial Section End -->
+
+
+	<!-- Blog Section -->
+
+	<!-- Blog Section End -->
+
+
+
+  <section class="gradient-section py-20 px-6">
+        <div class="max-w-7xl mx-auto">
             <!-- CTA Section -->
-            <div class="footer-cta-content">
-                <h2 class="footer-cta-title">
-                    Mixpanel is for teams that move.<br>Make your move.
+            <div class="text-center mb-32 cta-content">
+                <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-8">
+                    Lens is for teams that move.<br>Make your move.
                 </h2>
-                <div class="footer-cta-buttons">
-                    <button class="footer-btn-primary">Get Started Free →</button>
-                    <button class="footer-btn-secondary">Book a Demo →</button>
+                <div class="flex items-center justify-center space-x-4">
+                    <button class="cta-button bg-gray-900 text-white px-8 py-4 rounded-full hover:bg-gray-800 font-medium text-lg relative z-10">
+                        Get Started Free →
+                    </button>
+                    <button class="cta-button bg-transparent text-gray-900 px-8 py-4 rounded-full hover:bg-white/30 font-medium text-lg relative z-10">
+                        Book a Demo →
+                    </button>
                 </div>
             </div>
 
-            <!-- Footer Navigation Grid -->
-            <div class="footer-grid">
+            <!-- Footer Content -->
+            <div class="grid md:grid-cols-5 gap-12 mb-16">
                 <!-- Column 1: Platform -->
-                <div class="footer-column">
-                    <h3 class="footer-column-title">PLATFORM</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="#" class="footer-link-item">Product Analytics →</a></li>
-                        <li><a href="#" class="footer-link-item">Web Analytics →</a></li>
-                        <li><a href="#" class="footer-link-item">Mobile Analytics →</a></li>
-                        <li><a href="#" class="footer-link-item">Experiments →</a></li>
-                        <li><a href="#" class="footer-link-item">Metric Trees →</a></li>
-                        <li><a href="#" class="footer-link-item">Warehouse Connectors →</a></li>
-                        <li><a href="#" class="footer-link-item">Session Replay →</a></li>
-                        <li><a href="#" class="footer-link-item">Integrations →</a></li>
-                        <li><a href="#" class="footer-link-item">Security & Privacy →</a></li>
-                        <li><a href="#" class="footer-pricing-btn">Pricing →</a></li>
+                <div class="footer-section">
+                    <h3 class="text-purple-200 text-xs font-semibold uppercase tracking-wider mb-4">PLATFORM</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="footer-link text-white text-sm">Product Analytics →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Web Analytics →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Mobile Analytics →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Experiments →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Metric Trees →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Warehouse Connectors →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Session Replay →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Integrations →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Security & Privacy →</a></li>
+                        <li><a href="#" class="pricing-button text-white text-sm px-4 py-2 rounded-full inline-block mt-2">Pricing →</a></li>
                     </ul>
-
-                    <h3 class="footer-column-title">USE CASES</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="#" class="footer-link-item">Acquire New Users →</a></li>
-                        <li><a href="#" class="footer-link-item">Engage Your Users →</a></li>
-                        <li><a href="#" class="footer-link-item">Grow Your Usership →</a></li>
-                        <li><a href="#" class="footer-link-item">Empower Your Team →</a></li>
+                    
+                    <h3 class="text-purple-200 text-xs font-semibold uppercase tracking-wider mt-8 mb-4">USE CASES</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="footer-link text-white text-sm">Acquire New Users →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Engage Your Users →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Grow Your Usership →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Empower Your Team →</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 2: Teams & Industries -->
-                <div class="footer-column">
-                    <h3 class="footer-column-title">TEAMS</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="#" class="footer-link-item">Product Teams →</a></li>
-                        <li><a href="#" class="footer-link-item">Data Analyst Teams →</a></li>
-                        <li><a href="#" class="footer-link-item">Marketing Teams →</a></li>
-                        <li><a href="#" class="footer-link-item">Engineering Teams →</a></li>
+                <div class="footer-section">
+                    <h3 class="text-purple-200 text-xs font-semibold uppercase tracking-wider mb-4">TEAMS</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="footer-link text-white text-sm">Product Teams →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Data Analyst Teams →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Marketing Teams →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Engineering Teams →</a></li>
                     </ul>
-
-                    <h3 class="footer-column-title">INDUSTRIES</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="#" class="footer-link-item">Finance →</a></li>
-                        <li><a href="#" class="footer-link-item">Media & Entertainment →</a></li>
-                        <li><a href="#" class="footer-link-item">B2B SaaS →</a></li>
-                        <li><a href="#" class="footer-link-item">Ecommerce →</a></li>
-                        <li><a href="#" class="footer-link-item">Healthcare →</a></li>
-                        <li><a href="#" class="footer-link-item">AI →</a></li>
+                    
+                    <h3 class="text-purple-200 text-xs font-semibold uppercase tracking-wider mt-8 mb-4">INDUSTRIES</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="footer-link text-white text-sm">Finance →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Media & Entertainment →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">B2B SaaS →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Ecommerce →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Healthcare →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">AI →</a></li>
                     </ul>
-
-                    <h3 class="footer-column-title">BUSINESS SIZE</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="#" class="footer-link-item">Enterprise →</a></li>
-                        <li><a href="#" class="footer-link-item">Small & Midsize →</a></li>
-                        <li><a href="#" class="footer-link-item">Startup Program →</a></li>
+                    
+                    <h3 class="text-purple-200 text-xs font-semibold uppercase tracking-wider mt-8 mb-4">BUSINESS SIZE</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="footer-link text-white text-sm">Enterprise →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Small & Midsize →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Startup Program →</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 3: Resources -->
-                <div class="footer-column">
-                    <h3 class="footer-column-title">RESOURCES</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="#" class="footer-link-item">Docs & Guides →</a></li>
-                        <li><a href="#" class="footer-link-item">Contact Support →</a></li>
-                        <li><a href="#" class="footer-link-item">What's New →</a></li>
-                        <li><a href="#" class="footer-link-item">Troubleshooting FAQs →</a></li>
-                        <li><a href="#" class="footer-link-item">Blog →</a></li>
-                        <li><a href="#" class="footer-link-item">Events & Webinars →</a></li>
-                        <li><a href="#" class="footer-link-item">Community →</a></li>
-                        <li><a href="#" class="footer-link-item">Customer Stories →</a></li>
+                <div class="footer-section">
+                    <h3 class="text-purple-200 text-xs font-semibold uppercase tracking-wider mb-4">RESOURCES</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="footer-link text-white text-sm">Docs & Guides →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Contact Support →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">What's New →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Troubleshooting FAQs →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Blog →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Events & Webinars →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Community →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Customer Stories →</a></li>
                     </ul>
-
-                    <h3 class="footer-column-title">COMPANY</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="#" class="footer-link-item">About Us →</a></li>
-                        <li><a href="#" class="footer-link-item">Become a Partner →</a></li>
-                        <li><a href="#" class="footer-link-item">Expert Directory →</a></li>
-                        <li><a href="#" class="footer-link-item">Careers →</a></li>
-                        <li><a href="#" class="footer-link-item">Contact Sales →</a></li>
+                    
+                    <h3 class="text-purple-200 text-xs font-semibold uppercase tracking-wider mt-8 mb-4">COMPANY</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="footer-link text-white text-sm">About Us →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Become a Partner →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Expert Directory →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Careers →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Contact Sales →</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 4: Templates -->
-                <div class="footer-column">
-                    <h3 class="footer-column-title">TEMPLATES</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="#" class="footer-link-item">Company KPIs →</a></li>
-                        <li><a href="#" class="footer-link-item">Feature Launch →</a></li>
-                        <li><a href="#" class="footer-link-item">Lifecycle Cohort Analysis →</a></li>
-                        <li><a href="#" class="footer-link-item">Ecommerce →</a></li>
-                        <li><a href="#" class="footer-link-item">Marketing KPIs →</a></li>
-                        <li><a href="#" class="footer-link-item">Web Analytics →</a></li>
-                        <li><a href="#" class="footer-link-item">AI Company KPIs →</a></li>
+                <div class="footer-section">
+                    <h3 class="text-purple-200 text-xs font-semibold uppercase tracking-wider mb-4">TEMPLATES</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="footer-link text-white text-sm">Company KPIs →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Feature Launch →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Lifecycle Cohort Analysis →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Ecommerce →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Marketing KPIs →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Web Analytics →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">AI Company KPIs →</a></li>
                     </ul>
-
-                    <h3 class="footer-column-title">COMPARE US</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="#" class="footer-link-item">Amplitude →</a></li>
-                        <li><a href="#" class="footer-link-item">Heap →</a></li>
-                        <li><a href="#" class="footer-link-item">Pendo →</a></li>
-                        <li><a href="#" class="footer-link-item">Google Analytics →</a></li>
-                        <li><a href="#" class="footer-link-item">PostHog →</a></li>
-                        <li><a href="#" class="footer-link-item">Fullstory →</a></li>
-                        <li><a href="#" class="footer-link-item">Adobe Analytics →</a></li>
+                    
+                    <h3 class="text-purple-200 text-xs font-semibold uppercase tracking-wider mt-8 mb-4">COMPARE US</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="footer-link text-white text-sm">Amplitude →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Heap →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Pendo →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Google Analytics →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">PostHog →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Fullstory →</a></li>
+                        <li><a href="#" class="footer-link text-white text-sm">Adobe Analytics →</a></li>
                     </ul>
                 </div>
-
-                <!-- Column 5: Empty placeholder for alignment -->
-                <div class="footer-column"></div>
             </div>
 
             <!-- Footer Bottom -->
-            <div class="footer-bottom-section">
-                <div class="footer-bottom-content">
-                    <div class="footer-logo-section">
-                        <div class="footer-logo-text">mixpanel</div>
-                        <div class="footer-copyright">©2025 Mixpanel. All rights reserved</div>
+            <div class="footer-bottom pt-12 pb-8 border-t border-purple-400/30">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-6 md:mb-0">
+                        <div class="text-white text-2xl font-bold mb-2">Lens</div>
+                        <div class="text-purple-200 text-sm">©2025 Lens. All rights reserved</div>
                     </div>
-                    <div class="footer-legal-links">
-                        <a href="#" class="footer-legal-link">Privacy Program</a>
-                        <span class="footer-separator">•</span>
-                        <a href="#" class="footer-legal-link">Legal</a>
-                        <span class="footer-separator">•</span>
-                        <a href="#" class="footer-legal-link">Security</a>
-                        <span class="footer-separator">•</span>
-                        <a href="#" class="footer-legal-link">Your Privacy Rights</a>
+                    <div class="flex flex-wrap items-center justify-center gap-6 text-sm">
+                        <a href="#" class="text-white hover:text-purple-200 underline">Privacy Program</a>
+                        <span class="text-purple-300">•</span>
+                        <a href="#" class="text-white hover:text-purple-200 underline">Legal</a>
+                        <span class="text-purple-300">•</span>
+                        <a href="#" class="text-white hover:text-purple-200 underline">Security</a>
+                        <span class="text-purple-300">•</span>
+                        <a href="#" class="text-white hover:text-purple-200 underline">Your Privacy Rights</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-</body>
-</html>
+
+    <script>
+        // Add scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.footer-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Add ripple effect to CTA buttons
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+    </script>
+
+<!-- Modern Professional Footer Section 1 -->
+<footer class="relative bg-gradient-to-br from-green-vogue via-oxford-blue to-green-vogue text-white overflow-hidden">
+	<!-- Background Image Overlay -->
+	<div class="absolute inset-0 bg-cover bg-center opacity-5" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000');"></div>
+	
+	<!-- Animated Background Elements -->
+	<div class="absolute -left-20 top-20 pointer-events-none">
+		<div class="w-40 h-40 bg-gradient-to-br from-crusta/10 to-orange-600/5 rounded-full blur-3xl animate-float"></div>
+	</div>
+	<div class="absolute right-0 top-1/3 pointer-events-none">
+		<div class="w-32 h-32 bg-gradient-to-br from-ming/10 to-crusta/5 rounded-full blur-2xl animate-float-delay-1"></div>
+	</div>
+	<div class="absolute -left-10 bottom-1/4 pointer-events-none">
+		<div class="w-24 h-24 bg-gradient-to-br from-crusta/15 to-orange-600/10 rounded-full blur-xl animate-float-delay-2"></div>
+	</div>
+
+	<div class="container mx-auto px-4 py-16 lg:py-20 relative z-10">
+		<!-- Main Footer Content -->
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
+			
+			<!-- Company Information -->
+			<div class="lg:col-span-1">
+				<div class="group">
+					<!-- Logo -->
+					<div class="mb-6">
+						<a href="#" class="inline-block transition-transform duration-300 group-hover:scale-105 relative">
+							<div class="absolute inset-0 bg-black/20 rounded-lg blur-md -z-10"></div>
+							<img src="assets/img/logo.png" alt="Synoptiq Globle" class="h-12 w-auto object-contain relative z-10" style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)) drop-shadow(0 4px 8px rgba(0,0,0,0.2)) drop-shadow(0 8px 16px rgba(0,0,0,0.1));" loading="lazy" decoding="async">
+						</a>
+					</div>
+					
+					<!-- Company Description -->
+					<p class="text-white/80 leading-relaxed mb-6 text-sm">
+						Synoptiq Globle partners in a radically open and transparent process to understand the unique needs of clients and to build powerful software solutions.
+					</p>
+					
+					<!-- Social Media Links -->
+					<div class="space-y-3">
+						<h6 class="text-white font-semibold text-sm mb-4 flex items-center gap-2">
+							<span class="w-1 h-1 bg-crusta rounded-full"></span>
+							Connect With Us
+						</h6>
+						<div class="flex gap-3">
+							<a href="https://www.facebook.com/profile.php?id=61562076939186" target="_blank" rel="noopener noreferrer"
+							   class="group/social w-11 h-11 bg-white/10 hover:bg-gradient-to-r hover:from-crusta hover:to-orange-600 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(234,88,12,0.4)] border border-white/10 hover:border-crusta">
+								<mat-icon class="text-white text-lg">facebook</mat-icon>
+							</a>
+							<a href="https://www.linkedin.com/company/synoptiqgloble" target="_blank" rel="noopener noreferrer"
+							   class="group/social w-11 h-11 bg-white/10 hover:bg-gradient-to-r hover:from-ming hover:to-teal-600 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(13,148,136,0.4)] border border-white/10 hover:border-ming">
+								<svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+									<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+								</svg>
+							</a>
+							<a href="https://wa.me/94777332641" target="_blank" rel="noopener noreferrer"
+							   class="group/social w-11 h-11 bg-white/10 hover:bg-gradient-to-r hover:from-green-500 hover:to-green-600 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] border border-white/10 hover:border-green-500">
+								<svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+									<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Quick Links -->
+			<div>
+				<h6 class="text-white font-bold text-lg mb-6 flex items-center gap-2">
+					<span class="w-1 h-6 bg-gradient-to-b from-crusta to-orange-600 rounded-full"></span>
+					Quick Links
+				</h6>
+				<ul class="space-y-3">
+					<li>
+						<a href="#apldg_banner" class="group flex items-center gap-2 text-white/70 hover:text-crusta transition-all duration-300 text-sm">
+							<span class="w-1.5 h-1.5 bg-white/40 group-hover:bg-crusta rounded-full transition-all duration-300 group-hover:scale-150"></span>
+							<span class="group-hover:translate-x-1 transition-transform duration-300">Home</span>
+						</a>
+					</li>
+					<li>
+						<a href="#apldg_about" class="group flex items-center gap-2 text-white/70 hover:text-crusta transition-all duration-300 text-sm">
+							<span class="w-1.5 h-1.5 bg-white/40 group-hover:bg-crusta rounded-full transition-all duration-300 group-hover:scale-150"></span>
+							<span class="group-hover:translate-x-1 transition-transform duration-300">About Us</span>
+						</a>
+					</li>
+					<li>
+						<a href="#apldg_service" class="group flex items-center gap-2 text-white/70 hover:text-crusta transition-all duration-300 text-sm">
+							<span class="w-1.5 h-1.5 bg-white/40 group-hover:bg-crusta rounded-full transition-all duration-300 group-hover:scale-150"></span>
+							<span class="group-hover:translate-x-1 transition-transform duration-300">Services</span>
+						</a>
+					</li>
+					<li>
+						<a href="#our_products" class="group flex items-center gap-2 text-white/70 hover:text-crusta transition-all duration-300 text-sm">
+							<span class="w-1.5 h-1.5 bg-white/40 group-hover:bg-crusta rounded-full transition-all duration-300 group-hover:scale-150"></span>
+							<span class="group-hover:translate-x-1 transition-transform duration-300">Products</span>
+						</a>
+					</li>
+					<li>
+						<a href="#apldg_technologies" class="group flex items-center gap-2 text-white/70 hover:text-crusta transition-all duration-300 text-sm">
+							<span class="w-1.5 h-1.5 bg-white/40 group-hover:bg-crusta rounded-full transition-all duration-300 group-hover:scale-150"></span>
+							<span class="group-hover:translate-x-1 transition-transform duration-300">Technologies</span>
+						</a>
+					</li>
+					<li>
+						<a href="#apldg_certifications" class="group flex items-center gap-2 text-white/70 hover:text-crusta transition-all duration-300 text-sm">
+							<span class="w-1.5 h-1.5 bg-white/40 group-hover:bg-crusta rounded-full transition-all duration-300 group-hover:scale-150"></span>
+							<span class="group-hover:translate-x-1 transition-transform duration-300">Certifications</span>
+						</a>
+					</li>
+					<li>
+						<a href="#meet_our_team" class="group flex items-center gap-2 text-white/70 hover:text-crusta transition-all duration-300 text-sm">
+							<span class="w-1.5 h-1.5 bg-white/40 group-hover:bg-crusta rounded-full transition-all duration-300 group-hover:scale-150"></span>
+							<span class="group-hover:translate-x-1 transition-transform duration-300">Our Team</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<!-- Services Links -->
+			<div>
+				<h6 class="text-white font-bold text-lg mb-6 flex items-center gap-2">
+					<span class="w-1 h-6 bg-gradient-to-b from-ming to-teal-600 rounded-full"></span>
+					Our Services
+				</h6>
+				<ul class="space-y-3">
+					<li>
+						<a href="#" class="group flex items-center gap-2 text-white/70 hover:text-ming transition-all duration-300 text-sm">
+							<span class="w-1.5 h-1.5 bg-white/40 group-hover:bg-ming rounded-full transition-all duration-300 group-hover:scale-150"></span>
+							<span class="group-hover:translate-x-1 transition-transform duration-300">Containerization</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="group flex items-center gap-2 text-white/70 hover:text-ming transition-all duration-300 text-sm">
+							<span class="w-1.5 h-1.5 bg-white/40 group-hover:bg-ming rounded-full transition-all duration-300 group-hover:scale-150"></span>
+							<span class="group-hover:translate-x-1 transition-transform duration-300">App Modernization</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="group flex items-center gap-2 text-white/70 hover:text-ming transition-all duration-300 text-sm">
+							<span class="w-1.5 h-1.5 bg-white/40 group-hover:bg-ming rounded-full transition-all duration-300 group-hover:scale-150"></span>
+							<span class="group-hover:translate-x-1 transition-transform duration-300">DevOps & DevSecOps</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="group flex items-center gap-2 text-white/70 hover:text-ming transition-all duration-300 text-sm">
+							<span class="w-1.5 h-1.5 bg-white/40 group-hover:bg-ming rounded-full transition-all duration-300 group-hover:scale-150"></span>
+							<span class="group-hover:translate-x-1 transition-transform duration-300">Custom Solutions</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="group flex items-center gap-2 text-white/70 hover:text-ming transition-all duration-300 text-sm">
+							<span class="w-1.5 h-1.5 bg-white/40 group-hover:bg-ming rounded-full transition-all duration-300 group-hover:scale-150"></span>
+							<span class="group-hover:translate-x-1 transition-transform duration-300">Cloud Migration</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="group flex items-center gap-2 text-white/70 hover:text-ming transition-all duration-300 text-sm">
+							<span class="w-1.5 h-1.5 bg-white/40 group-hover:bg-ming rounded-full transition-all duration-300 group-hover:scale-150"></span>
+							<span class="group-hover:translate-x-1 transition-transform duration-300">Consulting</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<!-- Contact Information -->
+			<div>
+				<h6 class="text-white font-bold text-lg mb-6 flex items-center gap-2">
+					<span class="w-1 h-6 bg-gradient-to-b from-crusta to-orange-600 rounded-full"></span>
+					Contact Us
+				</h6>
+				<div class="space-y-4">
+					<!-- Address -->
+					<div class="group flex items-start gap-3">
+						<div class="w-10 h-10 bg-gradient-to-br from-crusta/20 to-orange-600/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 border border-crusta/20">
+							<mat-icon class="text-crusta text-lg">place</mat-icon>
+						</div>
+						<div class="flex-1">
+							<p class="text-white/80 text-sm leading-relaxed">
+								No: 22/6, Dambahena Road,<br>
+								Maharagama, Sri Lanka
+							</p>
+						</div>
+					</div>
+
+					<!-- Phone -->
+					<div class="group flex items-center gap-3">
+						<div class="w-10 h-10 bg-gradient-to-br from-ming/20 to-teal-600/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 border border-ming/20">
+							<mat-icon class="text-ming text-lg">call</mat-icon>
+						</div>
+						<a href="tel:+94768996805" class="text-white/80 hover:text-ming transition-colors text-sm font-medium">
+							+94 76 899 6805
+						</a>
+					</div>
+
+					<!-- Email -->
+					<div class="group flex items-center gap-3">
+						<div class="w-10 h-10 bg-gradient-to-br from-crusta/20 to-orange-600/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 border border-crusta/20">
+							<mat-icon class="text-crusta text-lg">email</mat-icon>
+						</div>
+						<a href="mailto:info@synoptiqgloble.com" class="text-white/80 hover:text-crusta transition-colors text-sm font-medium break-all">
+							info@synoptiqgloble.com
+						</a>
+					</div>
+
+					<!-- Business Hours -->
+					<div class="group flex items-start gap-3">
+						<div class="w-10 h-10 bg-gradient-to-br from-ming/20 to-teal-600/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 border border-ming/20">
+							<mat-icon class="text-ming text-lg">schedule</mat-icon>
+						</div>
+						<div class="flex-1">
+							<p class="text-white/80 text-sm leading-relaxed">
+								Mon - Fri: 9:00 AM - 6:00 PM<br>
+								<span class="text-white/60 text-xs">Weekend: Closed</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Newsletter Section -->
+		<div class="mb-12 p-6 md:p-8 bg-gradient-to-r from-crusta/10 via-ming/10 to-crusta/10 rounded-3xl border border-white/10 backdrop-blur-lg">
+			<div class="max-w-4xl mx-auto text-center">
+				<h6 class="text-xl md:text-2xl font-bold text-white mb-3">Stay Updated</h6>
+				<p class="text-white/70 mb-6 text-sm">Subscribe to our newsletter for the latest updates, insights, and tech trends</p>
+				<form class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+					<input type="email" placeholder="Enter your email address" 
+					       class="flex-1 px-4 md:px-5 py-2.5 md:py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:border-crusta focus:bg-white/15 transition-all duration-300 text-sm backdrop-blur-sm">
+					<button type="submit" 
+					        class="px-6 md:px-8 py-2.5 md:py-3 bg-gradient-to-r from-crusta to-orange-600 text-white rounded-xl font-semibold hover:shadow-[0_0_30px_rgba(234,88,12,0.6)] hover:scale-105 transition-all duration-300 text-sm whitespace-nowrap">
+						Subscribe
+					</button>
+				</form>
+			</div>
+		</div>
+
+		<!-- Footer Bottom -->
+		<div class="pt-8 border-t border-white/10">
+			<div class="flex flex-col lg:flex-row justify-between items-center gap-6">
+				<!-- Copyright -->
+				<div class="text-white/60 text-sm text-center lg:text-left">
+					© 2024 <span class="text-white/80 font-semibold">Synoptiq Globle</span>. All rights reserved. 
+					<span class="hidden md:inline">| Crafted with passion in Sri Lanka</span>
+				</div>
+
+				<!-- Footer Links -->
+				<div class="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-sm">
+					<a href="#" class="text-white/60 hover:text-crusta transition-colors duration-300 hover:underline">Privacy Policy</a>
+					<span class="text-white/30 hidden md:inline">•</span>
+					<a href="#" class="text-white/60 hover:text-ming transition-colors duration-300 hover:underline">Terms of Service</a>
+					<span class="text-white/30 hidden md:inline">•</span>
+					<a href="#" class="text-white/60 hover:text-crusta transition-colors duration-300 hover:underline">Support</a>
+				</div>
+
+				<!-- Back to Top Button -->
+				<a href="#apldg_banner" 
+				   class="group flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-gradient-to-r hover:from-crusta hover:to-orange-600 rounded-full transition-all duration-300 hover:scale-105 border border-white/20 hover:border-crusta text-sm">
+					<span class="text-white/80 group-hover:text-white transition-colors">Back to Top</span>
+					<mat-icon class="text-white/80 group-hover:text-white text-base">arrow_upward</mat-icon>
+				</a>
+			</div>
+		</div>
+
+		<!-- Trust Badges -->
+		<div class="mt-8 pt-8 border-t border-white/5">
+			<div class="flex flex-wrap justify-center items-center gap-6 md:gap-8 opacity-50 hover:opacity-70 transition-opacity duration-300">
+				<span class="text-white/60 text-xs flex items-center gap-2">
+					<mat-icon class="text-green-400 text-sm">verified</mat-icon>
+					ISO Certified
+				</span>
+				<span class="text-white/60 text-xs flex items-center gap-2">
+					<mat-icon class="text-green-400 text-sm">security</mat-icon>
+					Secure Platform
+				</span>
+				<span class="text-white/60 text-xs flex items-center gap-2">
+					<mat-icon class="text-green-400 text-sm">support_agent</mat-icon>
+					24/7 Support
+				</span>
+				<span class="text-white/60 text-xs flex items-center gap-2">
+					<mat-icon class="text-green-400 text-sm">workspace_premium</mat-icon>
+					Award Winning
+				</span>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- Modern Professional Footer 1 End -->
+
+<style>
+@keyframes float {
+	0%, 100% { transform: translateY(0px); }
+	50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+	animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delay-1 {
+	animation: float 8s ease-in-out infinite;
+	animation-delay: 2s;
+}
+
+.animate-float-delay-2 {
+	animation: float 7s ease-in-out infinite;
+	animation-delay: 4s;
+}
+</style>
+
+
