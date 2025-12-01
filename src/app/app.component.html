@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mixpanel Hero Section</title>
+    <title>Lens Hero Section</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -446,271 +446,6 @@
         .support-dot-2 { right: 25px; }
         .support-dot-3 { right: 35px; }
 
-        .footer-gradient-wrapper {
-            background: linear-gradient(180deg,
-                #ffffff 0%,
-                #fef3f7 15%,
-                #f5e6ff 35%,
-                #e9d5ff 50%,
-                #c4b5fd 70%,
-                #8b5cf6 85%,
-                #6d28d9 100%
-            );
-            width: 100%;
-            min-height: 100vh;
-            padding: 80px 24px 0;
-            position: relative;
-        }
-
-        .footer-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        @keyframes footer-fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .footer-cta-content {
-            animation: footer-fadeInUp 0.8s ease-out;
-            text-align: center;
-            margin-bottom: 120px;
-        }
-
-        .footer-cta-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 32px;
-            line-height: 1.2;
-        }
-
-        .footer-cta-buttons {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .footer-btn-primary {
-            background: #111827;
-            color: white;
-            padding: 16px 32px;
-            border-radius: 9999px;
-            font-weight: 500;
-            font-size: 1.125rem;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .footer-btn-primary:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .footer-btn-secondary {
-            background: transparent;
-            color: #111827;
-            padding: 16px 32px;
-            border-radius: 9999px;
-            font-weight: 500;
-            font-size: 1.125rem;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .footer-btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 48px;
-            margin-bottom: 64px;
-        }
-
-        .footer-column {
-            animation: footer-fadeInUp 0.6s ease-out;
-            animation-fill-mode: both;
-        }
-
-        .footer-column:nth-child(1) { animation-delay: 0.1s; }
-        .footer-column:nth-child(2) { animation-delay: 0.2s; }
-        .footer-column:nth-child(3) { animation-delay: 0.3s; }
-        .footer-column:nth-child(4) { animation-delay: 0.4s; }
-        .footer-column:nth-child(5) { animation-delay: 0.5s; }
-
-        .footer-column-title {
-            color: #ddd6fe;
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-            margin-top: 32px;
-        }
-
-        .footer-column-title:first-child {
-            margin-top: 0;
-        }
-
-        .footer-links-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .footer-links-list li {
-            margin-bottom: 12px;
-        }
-
-        .footer-link-item {
-            color: white;
-            font-size: 0.875rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
-            position: relative;
-        }
-
-        .footer-link-item:hover {
-            transform: translateX(3px);
-            color: #e0e7ff;
-        }
-
-        .footer-pricing-btn {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
-            font-size: 0.875rem;
-            padding: 8px 16px;
-            border-radius: 9999px;
-            display: inline-block;
-            margin-top: 8px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .footer-pricing-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.4);
-            transform: translateX(3px);
-        }
-
-        .footer-bottom-section {
-            padding-top: 48px;
-            padding-bottom: 32px;
-            border-top: 1px solid rgba(196, 181, 253, 0.3);
-        }
-
-        .footer-bottom-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 24px;
-        }
-
-        .footer-logo-section {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .footer-logo-text {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .footer-copyright {
-            color: #ddd6fe;
-            font-size: 0.875rem;
-        }
-
-        .footer-legal-links {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
-        .footer-legal-link {
-            color: white;
-            font-size: 0.875rem;
-            text-decoration: underline;
-            transition: color 0.3s ease;
-        }
-
-        .footer-legal-link:hover {
-            color: #ddd6fe;
-        }
-
-        .footer-separator {
-            color: #c4b5fd;
-        }
-
-        @media (max-width: 1024px) {
-            .footer-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .footer-gradient-wrapper {
-                padding: 60px 16px 0;
-            }
-
-            .footer-cta-title {
-                font-size: 2.5rem;
-            }
-
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 32px;
-            }
-
-            .footer-bottom-content {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .footer-cta-title {
-                font-size: 2rem;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-cta-buttons {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .footer-btn-primary,
-            .footer-btn-secondary {
-                width: 100%;
-                max-width: 300px;
-            }
-        }
 
         /* Intigration Section */
 
@@ -920,6 +655,533 @@
             border-radius: 4px;
         }
 
+
+        /* Footer Section */
+
+         /* Background gradients matching Lens style */
+        .lens-footer-wrapper {
+            background: linear-gradient(180deg,
+                #ffffff 0%,
+                #fef3f7 15%,
+                #f5e6ff 35%,
+                #e9d5ff 50%,
+                #c4b5fd 70%,
+                #8b5cf6 85%,
+                #6d28d9 100%
+            );
+            width: 100%;
+            padding: 80px 24px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Animated background elements */
+        .lens-bg-float {
+            position: absolute;
+            pointer-events: none;
+        }
+        
+        .lens-bg-float-1 {
+            left: -20px;
+            top: 80px;
+            width: 160px;
+            height: 160px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(60px);
+            animation: lens-float 6s ease-in-out infinite;
+        }
+        
+        .lens-bg-float-2 {
+            right: 0;
+            top: 33%;
+            width: 128px;
+            height: 128px;
+            background: radial-gradient(circle, rgba(192, 132, 252, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(40px);
+            animation: lens-float 8s ease-in-out infinite 2s;
+        }
+        
+        .lens-bg-float-3 {
+            left: -40px;
+            bottom: 25%;
+            width: 96px;
+            height: 96px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(30px);
+            animation: lens-float 7s ease-in-out infinite 4s;
+        }
+        
+        @keyframes lens-float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .lens-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* CTA Section */
+        .lens-cta-section {
+            text-align: center;
+            margin-bottom: 80px;
+            animation: lens-fadeInUp 0.8s ease-out;
+        }
+        
+        .lens-cta-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 32px;
+            line-height: 1.2;
+        }
+        
+        .lens-cta-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .lens-btn-primary {
+            background: #111827;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 9999px;
+            font-weight: 500;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .lens-btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .lens-btn-secondary {
+            background: transparent;
+            color: #1f2937;
+            padding: 16px 32px;
+            border-radius: 9999px;
+            font-weight: 500;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .lens-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Footer Card */
+        .lens-footer-card {
+            background: linear-gradient(135deg,
+                #ac3af8 0%,
+                #7522ce 25%,
+                #481a92 50%,
+                #361463 75%,
+                #180930 100%
+            );
+            border-radius: 32px;
+            padding: 60px 48px 48px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: lens-fadeInUp 1s ease-out 0.2s both;
+        }
+        
+        .lens-main-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+        
+        /* Company Section */
+        .lens-company-section .lens-logo {
+            max-width: 180px;
+            height: auto;
+            margin-bottom: 24px;
+            filter: brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+        }
+        
+        .lens-company-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.875rem;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+        
+        .lens-social-title {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .lens-social-dot {
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+        }
+        
+        .lens-social-links {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .lens-social-link {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .lens-social-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+        }
+        
+        /* Column Titles */
+        .lens-column-title {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            margin-top: 32px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .lens-column-title:first-child {
+            margin-top: 0;
+        }
+        
+        .lens-title-bar {
+            width: 4px;
+            height: 24px;
+            border-radius: 2px;
+        }
+        
+        .lens-bar-primary {
+            background: linear-gradient(to bottom, #a78bfa, #8b5cf6);
+        }
+        
+        .lens-bar-secondary {
+            background: linear-gradient(to bottom, #c4b5fd, #a78bfa);
+        }
+        
+        /* Links */
+        .lens-links-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .lens-links-list li {
+            margin-bottom: 12px;
+        }
+        
+        .lens-link-item {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .lens-link-dot {
+            width: 6px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .lens-link-item:hover {
+            color: white;
+            transform: translateX(3px);
+        }
+        
+        .lens-link-item:hover .lens-link-dot {
+            background: #a78bfa;
+            transform: scale(1.5);
+        }
+        
+        /* Contact Items */
+        .lens-contact-item {
+            display: flex;
+            align-items: start;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .lens-contact-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(139, 92, 246, 0.1));
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .lens-contact-item:hover .lens-contact-icon {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(139, 92, 246, 0.2));
+            transform: scale(1.1);
+        }
+        
+        .lens-contact-text {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+        
+        .lens-contact-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .lens-contact-link:hover {
+            color: white;
+        }
+        
+        /* Newsletter */
+        .lens-newsletter {
+            padding: 32px;
+            background: linear-gradient(to right,
+                rgba(168, 85, 247, 0.1),
+                rgba(139, 92, 246, 0.1),
+                rgba(168, 85, 247, 0.1)
+            );
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            margin-bottom: 48px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .lens-newsletter-title {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        
+        .lens-newsletter-description {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        
+        .lens-newsletter-form {
+            display: flex;
+            gap: 12px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .lens-newsletter-input {
+            flex: 1;
+            padding: 14px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            color: white;
+            font-size: 0.875rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .lens-newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .lens-newsletter-input:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(168, 85, 247, 0.5);
+        }
+        
+        .lens-newsletter-btn {
+            padding: 14px 32px;
+            background: linear-gradient(to right, #a78bfa, #8b5cf6);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .lens-newsletter-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
+        }
+        
+        /* Footer Bottom */
+        .lens-footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+        
+        .lens-logo-text {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .lens-copyright {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+        
+        .lens-footer-legal {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .lens-legal-link {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .lens-legal-link:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .lens-separator {
+            color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .lens-back-to-top {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 9999px;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+        }
+        
+        .lens-back-to-top:hover {
+            background: linear-gradient(to right, #a78bfa, #8b5cf6);
+            color: white;
+            border-color: transparent;
+            transform: scale(1.05);
+        }
+        
+        @keyframes lens-fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .lens-main-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .lens-footer-wrapper {
+                padding: 60px 16px 0;
+            }
+            
+            .lens-cta-title {
+                font-size: 2.5rem;
+            }
+            
+            .lens-main-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            
+            .lens-footer-card {
+                padding: 40px 24px 32px;
+            }
+            
+            .lens-newsletter-form {
+                flex-direction: column;
+            }
+            
+            .lens-footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .lens-cta-title {
+                font-size: 2rem;
+            }
+            
+            .lens-cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .lens-btn-primary,
+            .lens-btn-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
     </style>
 </head>
 <body class="bg-white">
@@ -927,7 +1189,7 @@
     <nav class="bg-white px-6 py-4">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <div class="flex items-center space-x-8">
-                <div class="text-2xl font-bold text-gray-900">mixpanel</div>
+                <div class="text-2xl font-bold text-gray-900">Lens</div>
                 <div class="hidden md:flex space-x-6">
                     <a href="#" class="text-gray-700 hover:text-gray-900">Platform</a>
                     <a href="#" class="text-gray-700 hover:text-gray-900">Solutions</a>
@@ -951,11 +1213,10 @@
             <!-- Hero Text -->
             <div class="text-center mb-12">
                 <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                    Analytics that drive decisions
+                    Product Analytics built for engineers and analysts.
                 </h1>
                 <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                    Mixpanel helps teams turn user behavior insights into<br>
-                    clear next steps, without delays or SQL bottlenecks.
+                    Lens gives you deep visibility into every user journey, empowering product teams to ship better features, faster.
                 </p>
                 <div class="flex items-center justify-center space-x-4">
                     <button class="bg-black text-white px-8 py-3 rounded-full hover:bg-gray-800 font-medium">
@@ -1128,19 +1389,18 @@
                     </div>
                     <div class="space-y-2 text-sm">
                         <div class="flex items-center space-x-2 p-2 hover:bg-gray-50 rounded">
-                            <span>📊</span>
+                            <span>📈</span>
                             <span>Simple</span>
                         </div>
                         <div class="flex items-center space-x-2 p-2 hover:bg-gray-50 rounded">
-                            <span>📈</span>
+                            <span>♻️</span>
                             <span>Funnel</span>
                         </div>
                         <div class="flex items-center space-x-2 p-2 hover:bg-gray-50 rounded">
-                            <span>♻️</span>
+                            <span>📊</span>
                             <span>Retention</span>
                         </div>
                         <div class="flex items-center space-x-2 p-2 hover:bg-gray-50 rounded">
-                            <span>📊</span>
                             <span>Cohort</span>
                         </div>
                     </div>
@@ -1174,7 +1434,7 @@
         </div>
     </section>
 
-    <!-- Mixpanel Insights Section -->
+    <!-- Lens Insights Section -->
     <section class="insights-section py-20 px-6">
         <div class="max-w-7xl mx-auto">
             <!-- Header -->
@@ -1183,7 +1443,7 @@
                     Turn insights into<br>action — at every stage
                 </h2>
                 <p class="text-lg text-gray-600 mb-8">
-                    Mixpanel helps improve product and web experiences by understanding user behavior, spotting patterns, and making informed decisions.
+                    Lens helps improve product and web experiences by understanding user behavior, spotting patterns, and making informed decisions.
                 </p>
                 <button class="bg-black text-white px-8 py-3 rounded-full hover:bg-gray-800 font-medium">
                     Book a Demo →
@@ -1561,7 +1821,7 @@
         </div>
     </section>
 
-    <!-- Mixpanel Metric Tree Section -->
+    <!-- Lens Metric Tree Section -->
     <section class="py-20 px-6">
         <div class="max-w-7xl mx-auto">
             <!-- Header -->
@@ -1570,7 +1830,7 @@
                     The engine for continuous innovation
                 </h2>
                 <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-                    Mixpanel is the AI-powered data clarity platform that helps you see<br>
+                    Lens is the AI-powered data clarity platform that helps you see<br>
                     the truth, act faster, and create the best customer experiences.
                 </p>
                 <button class="bg-gray-900 text-white px-8 py-3 rounded-full hover:bg-gray-800 font-medium">
@@ -1752,7 +2012,7 @@
         </div>
     </section>
 
-    <!-- Mixpanel Integrations Section -->
+    <!-- Lens Integrations Section -->
     <section class="integrations-wrapper" style="min-height: 600px; margin: 32px; border-radius: 32px;">
         <!-- Decorative vertical lines -->
         <div class="vertical-line line-1"></div>
@@ -1864,7 +2124,7 @@
                     Get started today,<br>quick and easy
                 </h2>
                 <p class="integrations-description">
-                    Mixpanel integrates with 100+ marketing tools, so you can rest assured we work with your tech stack.
+                    Lens integrates with 100+ marketing tools, so you can rest assured we work with your tech stack.
                 </p>
                 <button class="view-integrations-btn">
                     View Integrations
@@ -1903,14 +2163,14 @@
         });
     </script>
 
-    <!-- Mixpanel Why Teams Choose Section -->
+    <!-- Lens Why Teams Choose Section -->
     <section class="py-20 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <!-- Left Side - Carousel -->
                 <div>
                     <h2 class="text-5xl font-bold text-gray-900 mb-8">
-                        Why teams choose Mixpanel
+                        Why teams choose Lens
                     </h2>
 
                     <div class="rounded-3xl overflow-hidden shadow-2xl team-card-gradient p-6">
@@ -2177,7 +2437,7 @@
                                 <h3 class="text-xl font-bold text-gray-900">Trusted by teams, not just analysts</h3>
                             </div>
                             <p class="text-gray-600 ml-8">
-                                From product managers to growth marketers, Mixpanel helps everyone make smarter decisions — not just the data-savvy few.
+                                From product managers to growth marketers, Lens helps everyone make smarter decisions — not just the data-savvy few.
                             </p>
                         </div>
 
@@ -2197,7 +2457,7 @@
                                 <h3 class="text-xl font-bold text-gray-900">Built to evolve</h3>
                             </div>
                             <p class="text-gray-600 ml-8">
-                                Whether you're scaling fast or maturing your analytics practice, Mixpanel grows with your needs.
+                                Whether you're scaling fast or maturing your analytics practice, Lens grows with your needs.
                             </p>
                         </div>
                     </div>
@@ -2242,7 +2502,7 @@
         });
     </script>
 
-    <!-- Mixpanel Enterprise Section -->
+    <!-- Lens Enterprise Section -->
     <section class="enterprise-gradient-bg py-20 px-6 rounded-3xl mx-4 my-8">
         <div class="enterprise-glow-effect"></div>
 
@@ -2253,10 +2513,10 @@
                     Enterprise-ready.<br>Without the complexity.
                 </h2>
                 <p class="text-xl text-purple-100 mb-8 max-w-3xl mx-auto">
-                    Mixpanel supports the performance, flexibility, and governance modern teams need — with none of the legacy bloat.
+                    Lens supports the performance, flexibility, and governance modern teams need — with none of the legacy bloat.
                 </p>
                 <button class="enterprise-cta-button bg-white text-purple-900 px-8 py-3 rounded-full hover:bg-purple-50 font-medium">
-                    Explore Mixpanel for Enterprise →
+                    Explore Lens for Enterprise →
                 </button>
             </div>
 
@@ -2274,7 +2534,7 @@
                     <div class="enterprise-checkmark mb-4 text-2xl">✓</div>
                     <h3 class="text-xl font-bold mb-3">An open ecosystem</h3>
                     <p class="text-purple-100 text-sm">
-                        Mixpanel plays well with everyone. Connect to your existing stack with flexibility and no vendor lock-in.
+                        Lens plays well with everyone. Connect to your existing stack with flexibility and no vendor lock-in.
                     </p>
                 </div>
 
@@ -2322,7 +2582,7 @@
                     <!-- Quote -->
                     <div class="text-white">
                         <p class="text-2xl md:text-3xl font-medium mb-6 leading-relaxed">
-                            "Mixpanel helps us enable our customers for success. What started as a need for simple marketing metrics turned into custom product metrics for more than 100 different stakeholders across the company."
+                            "Lens helps us enable our customers for success. What started as a need for simple marketing metrics turned into custom product metrics for more than 100 different stakeholders across the company."
                         </p>
                         <p class="text-purple-200">
                             <span class="font-semibold">Drew Ashlock</span> - Senior Product Manager
@@ -2440,7 +2700,7 @@
         });
     </script>
 
-    <!-- Mixpanel Support Section -->
+    <!-- Lens Support Section -->
     <section class="py-20 px-6">
         <div class="max-w-7xl mx-auto">
             <!-- Header -->
@@ -2449,7 +2709,7 @@
                     Support for every<br>step of the journey
                 </h2>
                 <p class="text-lg text-gray-600">
-                    Whether you're moving fast on your own or need hands-on help, Mixpanel has you covered.
+                    Whether you're moving fast on your own or need hands-on help, Lens has you covered.
                 </p>
             </div>
 
@@ -2581,147 +2841,171 @@
         });
     </script>
 
-    <!-- Mixpanel Footer Section -->
-    <section class="footer-gradient-wrapper">
-        <div class="footer-container">
+    <!-- Lens Footer Section -->
+    <footer class="lens-footer-wrapper">
+        <!-- Animated Background Elements -->
+        <div class="lens-bg-float lens-bg-float-1"></div>
+        <div class="lens-bg-float lens-bg-float-2"></div>
+        <div class="lens-bg-float lens-bg-float-3"></div>
+        
+        <div class="lens-container">
             <!-- CTA Section -->
-            <div class="footer-cta-content">
-                <h2 class="footer-cta-title">
-                    Mixpanel is for teams that move.<br>Make your move.
+            <div class="lens-cta-section">
+                <h2 class="lens-cta-title">
+                    Lens is for teams that move.<br>Make your move.
                 </h2>
-                <div class="footer-cta-buttons">
-                    <button class="footer-btn-primary">Get Started Free →</button>
-                    <button class="footer-btn-secondary">Book a Demo →</button>
+                <div class="lens-cta-buttons">
+                    <button class="lens-btn-primary">Get Started Free →</button>
+                    <button class="lens-btn-secondary">Book a Demo →</button>
                 </div>
             </div>
 
-            <!-- Footer Navigation Grid -->
-            <div class="footer-grid">
-                <!-- Column 1: Platform -->
-                <div class="footer-column">
-                    <h3 class="footer-column-title">PLATFORM</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="#" class="footer-link-item">Product Analytics →</a></li>
-                        <li><a href="#" class="footer-link-item">Web Analytics →</a></li>
-                        <li><a href="#" class="footer-link-item">Mobile Analytics →</a></li>
-                        <li><a href="#" class="footer-link-item">Experiments →</a></li>
-                        <li><a href="#" class="footer-link-item">Metric Trees →</a></li>
-                        <li><a href="#" class="footer-link-item">Warehouse Connectors →</a></li>
-                        <li><a href="#" class="footer-link-item">Session Replay →</a></li>
-                        <li><a href="#" class="footer-link-item">Integrations →</a></li>
-                        <li><a href="#" class="footer-link-item">Security & Privacy →</a></li>
-                        <li><a href="#" class="footer-pricing-btn">Pricing →</a></li>
-                    </ul>
-
-                    <h3 class="footer-column-title">USE CASES</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="#" class="footer-link-item">Acquire New Users →</a></li>
-                        <li><a href="#" class="footer-link-item">Engage Your Users →</a></li>
-                        <li><a href="#" class="footer-link-item">Grow Your Usership →</a></li>
-                        <li><a href="#" class="footer-link-item">Empower Your Team →</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 2: Teams & Industries -->
-                <div class="footer-column">
-                    <h3 class="footer-column-title">TEAMS</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="#" class="footer-link-item">Product Teams →</a></li>
-                        <li><a href="#" class="footer-link-item">Data Analyst Teams →</a></li>
-                        <li><a href="#" class="footer-link-item">Marketing Teams →</a></li>
-                        <li><a href="#" class="footer-link-item">Engineering Teams →</a></li>
-                    </ul>
-
-                    <h3 class="footer-column-title">INDUSTRIES</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="#" class="footer-link-item">Finance →</a></li>
-                        <li><a href="#" class="footer-link-item">Media & Entertainment →</a></li>
-                        <li><a href="#" class="footer-link-item">B2B SaaS →</a></li>
-                        <li><a href="#" class="footer-link-item">Ecommerce →</a></li>
-                        <li><a href="#" class="footer-link-item">Healthcare →</a></li>
-                        <li><a href="#" class="footer-link-item">AI →</a></li>
-                    </ul>
-
-                    <h3 class="footer-column-title">BUSINESS SIZE</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="#" class="footer-link-item">Enterprise →</a></li>
-                        <li><a href="#" class="footer-link-item">Small & Midsize →</a></li>
-                        <li><a href="#" class="footer-link-item">Startup Program →</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 3: Resources -->
-                <div class="footer-column">
-                    <h3 class="footer-column-title">RESOURCES</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="#" class="footer-link-item">Docs & Guides →</a></li>
-                        <li><a href="#" class="footer-link-item">Contact Support →</a></li>
-                        <li><a href="#" class="footer-link-item">What's New →</a></li>
-                        <li><a href="#" class="footer-link-item">Troubleshooting FAQs →</a></li>
-                        <li><a href="#" class="footer-link-item">Blog →</a></li>
-                        <li><a href="#" class="footer-link-item">Events & Webinars →</a></li>
-                        <li><a href="#" class="footer-link-item">Community →</a></li>
-                        <li><a href="#" class="footer-link-item">Customer Stories →</a></li>
-                    </ul>
-
-                    <h3 class="footer-column-title">COMPANY</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="#" class="footer-link-item">About Us →</a></li>
-                        <li><a href="#" class="footer-link-item">Become a Partner →</a></li>
-                        <li><a href="#" class="footer-link-item">Expert Directory →</a></li>
-                        <li><a href="#" class="footer-link-item">Careers →</a></li>
-                        <li><a href="#" class="footer-link-item">Contact Sales →</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 4: Templates -->
-                <div class="footer-column">
-                    <h3 class="footer-column-title">TEMPLATES</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="#" class="footer-link-item">Company KPIs →</a></li>
-                        <li><a href="#" class="footer-link-item">Feature Launch →</a></li>
-                        <li><a href="#" class="footer-link-item">Lifecycle Cohort Analysis →</a></li>
-                        <li><a href="#" class="footer-link-item">Ecommerce →</a></li>
-                        <li><a href="#" class="footer-link-item">Marketing KPIs →</a></li>
-                        <li><a href="#" class="footer-link-item">Web Analytics →</a></li>
-                        <li><a href="#" class="footer-link-item">AI Company KPIs →</a></li>
-                    </ul>
-
-                    <h3 class="footer-column-title">COMPARE US</h3>
-                    <ul class="footer-links-list">
-                        <li><a href="#" class="footer-link-item">Amplitude →</a></li>
-                        <li><a href="#" class="footer-link-item">Heap →</a></li>
-                        <li><a href="#" class="footer-link-item">Pendo →</a></li>
-                        <li><a href="#" class="footer-link-item">Google Analytics →</a></li>
-                        <li><a href="#" class="footer-link-item">PostHog →</a></li>
-                        <li><a href="#" class="footer-link-item">Fullstory →</a></li>
-                        <li><a href="#" class="footer-link-item">Adobe Analytics →</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 5: Empty placeholder for alignment -->
-                <div class="footer-column"></div>
-            </div>
-
-            <!-- Footer Bottom -->
-            <div class="footer-bottom-section">
-                <div class="footer-bottom-content">
-                    <div class="footer-logo-section">
-                        <div class="footer-logo-text">mixpanel</div>
-                        <div class="footer-copyright">©2025 Mixpanel. All rights reserved</div>
+            <!-- Footer Card -->
+            <div class="lens-footer-card">
+                <div class="lens-main-grid">
+                    <!-- Company Information -->
+                    <div class="lens-company-section">
+                        <img src="assets/img/logo.png" alt="Synoptiq Lens" class="lens-logo">
+                        
+                        <p class="lens-company-description">
+                            Synoptiq Globle partners in a radically open and transparent process to understand the unique needs of clients and to build powerful software solutions.
+                        </p>
+                        
+                        <div class="lens-social-title">
+                            <span class="lens-social-dot"></span>
+                            Connect With Us
+                        </div>
+                        <div class="lens-social-links">
+                            <a href="https://www.facebook.com/profile.php?id=61562076939186" target="_blank" class="lens-social-link">
+                                <span class="material-icons" style="font-size: 20px;">facebook</span>
+                            </a>
+                            <a href="https://www.linkedin.com/company/synoptiqgloble" target="_blank" class="lens-social-link">
+                                <svg style="width: 20px; height: 20px;" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                            </a>
+                            <a href="https://wa.me/94777332641" target="_blank" class="lens-social-link">
+                                <svg style="width: 20px; height: 20px;" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                    <div class="footer-legal-links">
-                        <a href="#" class="footer-legal-link">Privacy Program</a>
-                        <span class="footer-separator">•</span>
-                        <a href="#" class="footer-legal-link">Legal</a>
-                        <span class="footer-separator">•</span>
-                        <a href="#" class="footer-legal-link">Security</a>
-                        <span class="footer-separator">•</span>
-                        <a href="#" class="footer-legal-link">Your Privacy Rights</a>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h3 class="lens-column-title">
+                            <span class="lens-title-bar lens-bar-primary"></span>
+                            Quick Links
+                        </h3>
+                        <ul class="lens-links-list">
+                            <li><a href="#apldg_banner" class="lens-link-item"><span class="lens-link-dot"></span>Home</a></li>
+                            <li><a href="#apldg_about" class="lens-link-item"><span class="lens-link-dot"></span>About Us</a></li>
+                            <li><a href="#apldg_service" class="lens-link-item"><span class="lens-link-dot"></span>Services</a></li>
+                            <li><a href="#our_products" class="lens-link-item"><span class="lens-link-dot"></span>Products</a></li>
+                            <li><a href="#apldg_technologies" class="lens-link-item"><span class="lens-link-dot"></span>Technologies</a></li>
+                            <li><a href="#apldg_certifications" class="lens-link-item"><span class="lens-link-dot"></span>Certifications</a></li>
+                            <li><a href="#meet_our_team" class="lens-link-item"><span class="lens-link-dot"></span>Our Team</a></li>
+                        </ul>
                     </div>
+
+                    <!-- Services -->
+                    <div>
+                        <h3 class="lens-column-title">
+                            <span class="lens-title-bar lens-bar-secondary"></span>
+                            Our Services
+                        </h3>
+                        <ul class="lens-links-list">
+                            <li><a href="#" class="lens-link-item"><span class="lens-link-dot"></span>Containerization</a></li>
+                            <li><a href="#" class="lens-link-item"><span class="lens-link-dot"></span>App Modernization</a></li>
+                            <li><a href="#" class="lens-link-item"><span class="lens-link-dot"></span>DevOps & DevSecOps</a></li>
+                            <li><a href="#" class="lens-link-item"><span class="lens-link-dot"></span>Custom Solutions</a></li>
+                            <li><a href="#" class="lens-link-item"><span class="lens-link-dot"></span>Cloud Migration</a></li>
+                            <li><a href="#" class="lens-link-item"><span class="lens-link-dot"></span>Consulting</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div>
+                        <h3 class="lens-column-title">
+                            <span class="lens-title-bar lens-bar-primary"></span>
+                            Contact Us
+                        </h3>
+                        
+                        <div class="lens-contact-item">
+                            <div class="lens-contact-icon">
+                                <span class="material-icons" style="font-size: 18px; color: #a78bfa;">place</span>
+                            </div>
+                            <div class="lens-contact-text">
+                                No: 22/6, Dambahena Road,<br>
+                                Maharagama, Sri Lanka
+                            </div>
+                        </div>
+
+                        <div class="lens-contact-item">
+                            <div class="lens-contact-icon">
+                                <span class="material-icons" style="font-size: 18px; color: #a78bfa;">call</span>
+                            </div>
+                            <a href="tel:+94768996805" class="lens-contact-link">
+                                +94 76 899 6805
+                            </a>
+                        </div>
+
+                        <div class="lens-contact-item">
+                            <div class="lens-contact-icon">
+                                <span class="material-icons" style="font-size: 18px; color: #a78bfa;">email</span>
+                            </div>
+                            <a href="mailto:info@synoptiqgloble.com" class="lens-contact-link" style="word-break: break-all;">
+                                info@synoptiqgloble.com
+                            </a>
+                        </div>
+
+                        <div class="lens-contact-item">
+                            <div class="lens-contact-icon">
+                                <span class="material-icons" style="font-size: 18px; color: #a78bfa;">schedule</span>
+                            </div>
+                            <div class="lens-contact-text">
+                                Mon - Fri: 9:00 AM - 6:00 PM<br>
+                                <span style="font-size: 0.75rem; opacity: 0.7;">Weekend: Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="lens-newsletter">
+                    <h6 class="lens-newsletter-title">Stay Updated</h6>
+                    <p class="lens-newsletter-description">
+                        Subscribe to our newsletter for the latest updates, insights, and tech trends
+                    </p>
+                    <form class="lens-newsletter-form">
+                        <input type="email" placeholder="Enter your email address" class="lens-newsletter-input">
+                        <button type="submit" class="lens-newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+
+                <!-- Footer Bottom -->
+                <div class="lens-footer-bottom">
+                    <div>
+                        <div class="lens-logo-text">synoptiq lens</div>
+                        <div class="lens-copyright">©2024 Synoptiq Globle. All rights reserved</div>
+                    </div>
+                    
+                    <div class="lens-footer-legal">
+                        <a href="#" class="lens-legal-link">Privacy Policy</a>
+                        <span class="lens-separator">•</span>
+                        <a href="#" class="lens-legal-link">Terms of Service</a>
+                        <span class="lens-separator">•</span>
+                        <a href="#" class="lens-legal-link">Support</a>
+                    </div>
+                    
+                    <a href="#apldg_banner" class="lens-back-to-top">
+                        <span>Back to Top</span>
+                        <span class="material-icons" style="font-size: 16px;">arrow_upward</span>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </footer>
 </body>
 </html>
